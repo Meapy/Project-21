@@ -18,8 +18,11 @@ public class PlayerControl : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
 
+    private Animator anim;
+
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -32,6 +35,7 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+        //animator.SetFloat("speed", Mathf.Abs(speed));
 
         if (moveInput > 0)
         {
@@ -44,9 +48,18 @@ public class PlayerControl : MonoBehaviour
 
         if (isGrounded == true & Input.GetKeyDown(KeyCode.Space))
         {
+            anim.SetBool("isJumping", true);
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
+        }
+
+        if (isGrounded == true)
+        {
+            anim.SetBool("isJumping", false);
+        }
+        else {
+            anim.SetBool("isJumping", true);
         }
 
         if (Input.GetKey(KeyCode.Space) && isJumping == true)
@@ -58,7 +71,7 @@ public class PlayerControl : MonoBehaviour
             }
             else
             {
-                isJumping = false; 
+                isJumping = false;
             }
         }
 
@@ -67,6 +80,13 @@ public class PlayerControl : MonoBehaviour
             isJumping = false;
         }
 
+        if (moveInput == 0)
+        {
+            anim.SetBool("isRunning", false);
+        }
+        else {
+            anim.SetBool("isRunning", true);
+        }
     }
 
 }
