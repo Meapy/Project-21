@@ -47,6 +47,10 @@ sysinfo.txt
 # Crashlytics generated file
 <<<<<<< HEAD
 crashlytics-build.properties
+Library/Artifacts/cb/cb56a1dd8268f2ea78c83473ae0826e7
+=======
+<<<<<<< HEAD
+crashlytics-build.properties
 Library/ArtifactDB
 Library/CurrentLayout-default.dwlt
 Library/ScriptAssemblies/Assembly-CSharp.dll
@@ -54,4 +58,11 @@ Library/ScriptAssemblies/Assembly-CSharp.pdb
 Library/SourceAssetDB
 =======
 crashlytics-build.properties
+<<<<<<< HEAD
+Temp/UnityLockfile
+Library/EditorInstance.json
+Temp/UnityLockfile
+=======
 >>>>>>> a69aa275a408a4a9ad0b005b16d3ac3aa8534963
+>>>>>>> 747fda01846ccda42751e3b8cb516364be1e5a2e
+>>>>>>> de9d3298703fa0b6ad8cd16e9dfb0c5ced79a66a
