@@ -45,9 +45,13 @@ sysinfo.txt
 *.unitypackage
 
 # Crashlytics generated file
+<<<<<<< HEAD
 crashlytics-build.properties
 Library/ArtifactDB
 Library/CurrentLayout-default.dwlt
 Library/ScriptAssemblies/Assembly-CSharp.dll
 Library/ScriptAssemblies/Assembly-CSharp.pdb
 Library/SourceAssetDB
+=======
+crashlytics-build.properties
+>>>>>>> a69aa275a408a4a9ad0b005b16d3ac3aa8534963
