@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
     public float speed;
     public float jumpForce;
     private float moveInput;
+    public float threshold;
 
     private bool isGrounded;
     public Transform feetPos;
@@ -87,8 +88,14 @@ public class PlayerControl : MonoBehaviour
         else {
             anim.SetBool("isRunning", true);
         }
-    }
 
+        if (transform.position.y < threshold)
+        {
+            transform.position = new Vector3(-4, -1, -3);
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+    }
+    //x -3.7 y -1 z -3
 }
 
 /*

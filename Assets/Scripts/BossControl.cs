@@ -8,6 +8,8 @@ public class BossControl : MonoBehaviour
     public float speed;
     public float jumpForce;
     private float moveInput;
+    public float threshold; // Makes sure characters is still on the map
+
 
     private bool isGrounded;
     public Transform feetPos;
@@ -53,6 +55,13 @@ public class BossControl : MonoBehaviour
         else
         {
             anim.SetBool("isRunning", true);
+        }
+
+        //Can remove this lataer as boss will not be falling out of map, or keep as a fail safe ? lul
+        if (transform.position.y < threshold)
+        {
+            transform.position = new Vector3(4, -1, -7);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
 }
