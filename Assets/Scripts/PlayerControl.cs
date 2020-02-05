@@ -95,7 +95,6 @@ public class PlayerControl : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
-    //x -3.7 y -1 z -3
 }
 
 /*

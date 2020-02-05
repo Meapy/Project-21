@@ -66,4 +66,5 @@ public class BossControl : MonoBehaviour
     { 
         health -= damage;
     }
-}
+
+ }
