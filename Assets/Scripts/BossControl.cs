@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossControl : MonoBehaviour
 {
@@ -20,12 +21,11 @@ public class BossControl : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
 
-    private Animator anim;
+    public int health;
+    public GameObject deathEffect;
 
-    private void FixedUpdate()
-    {
-        moveInput = Input.GetAxisRaw("Horizontal");
-    }
+    private Animator anim;
+    public Slider bossHealthBar;
 
     void Start()
     {
@@ -37,8 +37,7 @@ public class BossControl : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
-
-
+        bossHealthBar.value = health;
 
         if (isGrounded == true)
         {
@@ -48,14 +47,6 @@ public class BossControl : MonoBehaviour
         {
             anim.SetBool("isJumping", true);
         }
-        if (moveInput == 0)
-        {
-            anim.SetBool("isRunning", false);
-        }
-        else
-        {
-            anim.SetBool("isRunning", true);
-        }
 
         //Can remove this lataer as boss will not be falling out of map, or keep as a fail safe ? lul
         if (transform.position.y < threshold)
@@ -63,5 +54,16 @@ public class BossControl : MonoBehaviour
             transform.position = new Vector3(4, -1, -7);
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
+
+        if (health <= 0)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+    
+    public void TakeDamage(int damage)
+    { 
+        health -= damage;
     }
 }

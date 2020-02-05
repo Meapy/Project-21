@@ -64,6 +64,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BossControl.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Weapon.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/krazy/Documents/GitHub/Project-21/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
