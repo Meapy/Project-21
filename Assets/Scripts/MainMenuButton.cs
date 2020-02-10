@@ -9,6 +9,10 @@ public class MainMenuButton : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void GoToLevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
 
     public void GoToGame()
     {
