@@ -5,54 +5,36 @@ using UnityEngine.UI;
 
 public class BossControl : MonoBehaviour
 {
-    private Rigidbody2D rb;
     public float speed;
-    public float jumpForce;
-    private float moveInput;
-    public float threshold; // Makes sure characters is still on the map
+    public float startTimeBetweenShots;
+    private float timeBetweenShots;
 
-
-    private bool isGrounded;
-    public Transform feetPos;
-    public float checkRadius;
-    public LayerMask whatIsGround; // checks what ground type it is ie. if its slime : can make character slower
-
-    private float jumpTimeCounter;
-    public float jumpTime;
-    private bool isJumping;
-
-    public int health;
+    public GameObject BossProjectile1;
+    private Transform player;
     public GameObject deathEffect;
 
-    private Animator anim;
     public Slider bossHealthBar;
+    public float health;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
         bossHealthBar.value = health;
 
-        if (isGrounded == true)
+        if (timeBetweenShots <= 0)
         {
-            anim.SetBool("isJumping", false);
+            Instantiate(BossProjectile1, transform.position, Quaternion.identity);
+            //transform.position = transform.position + new Vector3(1,0,0);
+            //Instantiate(BossProjectile1, transform.position, Quaternion.identity);
+            timeBetweenShots = startTimeBetweenShots;
         }
         else
         {
-            anim.SetBool("isJumping", true);
-        }
-
-        //Can remove this lataer as boss will not be falling out of map, or keep as a fail safe ? lul
-        if (transform.position.y < threshold)
-        {
-            transform.position = new Vector3(4, -1, -7);
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            timeBetweenShots -= Time.deltaTime;
         }
 
         if (health <= 0)
@@ -61,10 +43,59 @@ public class BossControl : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
     public void TakeDamage(int damage)
-    { 
+    {
         health -= damage;
+        Debug.Log("Boss Health is " + health);
+    }
+}
+
+/*
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class BossControl : MonoBehaviour
+{
+    private Rigidbody2D rb;
+    public float speed;
+    public float threshold; // Makes sure characters is still on the map
+    public Transform feetPos;
+ 
+    public float health;
+    public GameObject deathEffect;
+
+    private Animator anim;
+    public Slider bossHealthBar;
+
+    public Transform player;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    void Update()
+    {
+        bossHealthBar.value = health;
+
+        if (health <= 0)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("Boss Health is " + health);
+    }
  }
+
+ */
