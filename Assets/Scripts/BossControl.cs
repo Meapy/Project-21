@@ -5,66 +5,62 @@ using UnityEngine.UI;
 
 public class BossControl : MonoBehaviour
 {
-    private Rigidbody2D rb;
     public float speed;
-    public float jumpForce;
-    private float moveInput;
-    public float threshold; // Makes sure characters is still on the map
+    public float stoppingDistance;
+    public float retreatDistance;
+    public float startTimeBetweenShots;
+    private float timeBetweenShots;
 
-
-    private bool isGrounded;
-    public Transform feetPos;
-    public float checkRadius;
-    public LayerMask whatIsGround; // checks what ground type it is ie. if its slime : can make character slower
-
-    private float jumpTimeCounter;
-    public float jumpTime;
-    private bool isJumping;
-
-    public int health;
+    public GameObject BossProjectile1;
+    private Transform player;
     public GameObject deathEffect;
 
-    private Animator anim;
     public Slider bossHealthBar;
+    public float health;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
         bossHealthBar.value = health;
 
-        if (isGrounded == true)
+        if (Vector2.Distance(transform.position, player.position) > stoppingDistance) 
+        { // Moves towards player if the boss is too far away
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        }
+        else if(Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+        { // Stays in the same spot if the player is within the distance parameters
+            transform.position = this.transform.position;
+        }  
+        else if(Vector2.Distance(transform.position, player.position) < retreatDistance)
+        { // Moves backwards if the player moves too close
+            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+        }
+
+        // Boss Shooting
+        if (timeBetweenShots <= 0)
         {
-            anim.SetBool("isJumping", false);
+            Instantiate(BossProjectile1, transform.position, Quaternion.identity); // creates projectile from BossProjectile1
+            timeBetweenShots = startTimeBetweenShots; // Limits boss to shooting only a certain amount of times
         }
         else
         {
-            anim.SetBool("isJumping", true);
-        }
-
-        //Can remove this lataer as boss will not be falling out of map, or keep as a fail safe ? lul
-        if (transform.position.y < threshold)
-        {
-            transform.position = new Vector3(4, -1, -7);
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            timeBetweenShots -= Time.deltaTime; // Counts down timer before boss can shoot again
         }
 
         if (health <= 0)
         {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Instantiate(deathEffect, transform.position, Quaternion.identity); 
             Destroy(gameObject);
         }
     }
-    
-    public void TakeDamage(int damage)
-    { 
-        health -= damage;
-    }
 
- }
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("Boss Health is " + health);
+    }
+}

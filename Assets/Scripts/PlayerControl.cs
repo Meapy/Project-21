@@ -1,7 +1,68 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+public class PlayerControl : MonoBehaviour
+{
+    private Rigidbody2D rb;
+    public float speed;
+    Vector2 movement;
+
+    private Animator anim;
+
+    public float health;
+    public Slider playerHealthBar;
+    public Transform enemy;
+    public GameObject deathEffect;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+    }
+
+    void Update()
+    {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        playerHealthBar.value = health;
+
+        if (health <= 0)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
+        if (movement.x > 0)
+        {
+            //transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        if (movement.x < 0)
+        {
+            //transform.eulerAngles = new Vector3(0, 180, 0);
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        // ^^ Flips the image of player around so there is no need to create as many sprites
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("Player Health is " + health);
+    }
+}
+
+// Keep this code for when adding animations :) 
+/*
 public class PlayerControl : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -96,35 +157,36 @@ public class PlayerControl : MonoBehaviour
         }
     }
 }
+*/
 
 /*
 public class Movement2D : MonoBehaviour
 {
-    //Variables
-    public float movementSpeed = 5f;
-    public bool isGrounded = false;
+//Variables
+public float movementSpeed = 5f;
+public bool isGrounded = false;
 
 
-    // Start is called before the first frame update
-    void Start()
+// Start is called before the first frame update
+void Start()
+{
+
+}
+
+// Update is called once per frame
+void Update()
+{
+    Jump();
+    Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+    transform.position += movement * Time.deltaTime * movementSpeed;
+}
+
+void Jump()
+{
+    if (Input.GetButtonDown("Jump") && isGrounded == true)
     {
-
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Jump();
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += movement * Time.deltaTime * movementSpeed;
-    }
-
-    void Jump()
-    {
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
-        }
-    }
+}
 }
 */
