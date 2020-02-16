@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,8 +10,6 @@ public class Projectile : MonoBehaviour
     public LayerMask whatIsSolid;
 
     public int damage;
-  
-
     public GameObject destroyEffect;
 
     // Start is called before the first frame update
