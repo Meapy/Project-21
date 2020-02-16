@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class BossControl : MonoBehaviour
 {
     public float speed;
+    public float stoppingDistance;
+    public float retreatDistance;
     public float startTimeBetweenShots;
     private float timeBetweenShots;
 
@@ -25,21 +27,33 @@ public class BossControl : MonoBehaviour
     {
         bossHealthBar.value = health;
 
+        if (Vector2.Distance(transform.position, player.position) > stoppingDistance) 
+        { // Moves towards player if the boss is too far away
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        }
+        else if(Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+        { // Stays in the same spot if the player is within the distance parameters
+            transform.position = this.transform.position;
+        }  
+        else if(Vector2.Distance(transform.position, player.position) < retreatDistance)
+        { // Moves backwards if the player moves too close
+            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+        }
+
+        // Boss Shooting
         if (timeBetweenShots <= 0)
         {
-            Instantiate(BossProjectile1, transform.position, Quaternion.identity);
-            //transform.position = transform.position + new Vector3(1,0,0);
-            //Instantiate(BossProjectile1, transform.position, Quaternion.identity);
-            timeBetweenShots = startTimeBetweenShots;
+            Instantiate(BossProjectile1, transform.position, Quaternion.identity); // creates projectile from BossProjectile1
+            timeBetweenShots = startTimeBetweenShots; // Limits boss to shooting only a certain amount of times
         }
         else
         {
-            timeBetweenShots -= Time.deltaTime;
+            timeBetweenShots -= Time.deltaTime; // Counts down timer before boss can shoot again
         }
 
         if (health <= 0)
         {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Instantiate(deathEffect, transform.position, Quaternion.identity); 
             Destroy(gameObject);
         }
     }
@@ -50,52 +64,3 @@ public class BossControl : MonoBehaviour
         Debug.Log("Boss Health is " + health);
     }
 }
-
-/*
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class BossControl : MonoBehaviour
-{
-    private Rigidbody2D rb;
-    public float speed;
-    public float threshold; // Makes sure characters is still on the map
-    public Transform feetPos;
- 
-    public float health;
-    public GameObject deathEffect;
-
-    private Animator anim;
-    public Slider bossHealthBar;
-
-    public Transform player;
-
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    void Update()
-    {
-        bossHealthBar.value = health;
-
-        if (health <= 0)
-        {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        Debug.Log("Boss Health is " + health);
-    }
- }
-
- */

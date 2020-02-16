@@ -51,7 +51,7 @@ public class PlayerControl : MonoBehaviour
             //transform.eulerAngles = new Vector3(0, 180, 0);
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
-        
+        // ^^ Flips the image of player around so there is no need to create as many sprites
     }
 
     public void TakeDamage(int damage)
@@ -60,6 +60,8 @@ public class PlayerControl : MonoBehaviour
         Debug.Log("Player Health is " + health);
     }
 }
+
+// Keep this code for when adding animations :) 
 /*
 public class PlayerControl : MonoBehaviour
 {
