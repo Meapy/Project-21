@@ -20,7 +20,7 @@ public class MainMenuButton : MonoBehaviour
     }
     public void GoToCharacterSelect()
     {
-        SceneManager.LoadScene("CharactersSelect");
+        SceneManager.LoadScene("CharacterSelect");
     }
     public void GoToSettings()
     {
