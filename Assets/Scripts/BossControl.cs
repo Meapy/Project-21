@@ -11,7 +11,6 @@ public class BossControl : MonoBehaviour
     public float startDistance;
     public float startTimeBetweenShots;
     private float timeBetweenShots;
-
     public GameObject BossProjectile1;
     private Transform player;
     public GameObject deathEffect;
