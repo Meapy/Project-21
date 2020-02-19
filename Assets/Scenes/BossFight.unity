@@ -620,14 +620,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 316445329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9f517ccbf5ec99498188cc32d4436b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ee7cd219f1fd9f4b89dacb13097364f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  health: 5
+  speed: 5
+  health: 100
   playerHealthBar: {fileID: 1255276636}
   enemy: {fileID: 1096931094}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 6130689774090929180, guid: 5a0e66cdc3323244cb34d75dde18c373,
+    type: 3}
 --- !u!50 &316445331
 Rigidbody2D:
   serializedVersion: 4
@@ -1044,18 +1045,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 848074090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa27961da8c4da4788ae64c7957faea, type: 3}
+  m_Script: {fileID: 11500000, guid: 42fb504a803c4c045a5048b7207245c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  lifetime: 5
-  distance: 5
-  whatIsSolid:
-    serializedVersion: 2
-    m_Bits: 1792
-  damage: 10
-  destroyEffect: {fileID: 6130689774090929180, guid: 5a0e66cdc3323244cb34d75dde18c373,
+  offset: -90
+  projectile: {fileID: 5841838157674903570, guid: 4f37eb3a7162d514295bef4db9969525,
     type: 3}
+  shotPoint: {fileID: 86328871}
+  starttimeBetweenShot: 0.3
 --- !u!1 &1039798368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,18 +1396,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1096931089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cf89278fe6d66945bd4602bce07e619, type: 3}
+  m_Script: {fileID: 11500000, guid: 93e30931f69dcce48a21a6e5bdccd858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  stoppingDistance: 10
-  retreatDistance: 10
-  startDistance: 0
-  startTimeBetweenShots: 2
-  BossProjectile1: {fileID: 0}
-  deathEffect: {fileID: 0}
-  bossHealthBar: {fileID: 0}
-  health: 0
+  speed: 4
+  stoppingDistance: 7
+  retreatDistance: 4
+  startDistance: 8
+  startTimeBetweenShots: 1
+  BossProjectile1: {fileID: 4137373050456899739, guid: be116b506782f14468357c274a03cd09,
+    type: 3}
+  deathEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,
+    type: 3}
+  bossHealthBar: {fileID: 1396459178}
+  health: 50
 --- !u!1 &1255276634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,7 +1596,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1566116357}
   - component: {fileID: 1566116359}
-  - component: {fileID: 1566116358}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -1620,26 +1618,6 @@ Transform:
   m_Father: {fileID: 1096931094}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.511}
---- !u!114 &1566116358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566116356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa27961da8c4da4788ae64c7957faea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  lifetime: 5
-  distance: 5
-  whatIsSolid:
-    serializedVersion: 2
-    m_Bits: 1792
-  damage: 10
-  destroyEffect: {fileID: 0}
 --- !u!212 &1566116359
 SpriteRenderer:
   m_ObjectHideFlags: 0
