@@ -36,19 +36,19 @@ public class BossProjectile1 : MonoBehaviour
             }
             DestroyProjectile();
         }
-
+        /*
         if (hitInfo.collider != null)
         {
             if (hitInfo.collider == player.transform)
             {
                 DestroyProjectile();
             }
-        }
+        } */
     }
 
     void DestroyProjectile()
     {
-        Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        //Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
