@@ -73,3 +73,4 @@ Temp/UnityLockfile
 >>>>>>> de9d3298703fa0b6ad8cd16e9dfb0c5ced79a66a
 Assembly-CSharp.csproj
 Library/ArtifactDB
+*.prefab
