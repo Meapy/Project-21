@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
@@ -29,7 +28,7 @@ public class CharacterSelection : MonoBehaviour
     public void LeftArrow()
     {
         selectedCharacterIndex--;
-        if(selectedCharacterIndex < 0)
+        if (selectedCharacterIndex < 0)
         {
             selectedCharacterIndex = characterList.Count - 1;
         }
@@ -48,8 +47,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void Confirm()
     {
-        Debug.Log(string.Format("Character{0}:{1} has been chosen",selectedCharacterIndex,characterList[selectedCharacterIndex].characterName));
-        SceneManager.LoadScene("LevelSelect");
+        Debug.Log(string.Format("Character{0}:{1} has been chosen", selectedCharacterIndex, characterList[selectedCharacterIndex].characterName));
     }
 
     private void UpdateCharacterSelectionUI()
@@ -65,6 +63,6 @@ public class CharacterSelection : MonoBehaviour
         public Sprite splash;
         public string characterName;
         public Color characterColor;
-         
+
     }
 }
