@@ -1055,7 +1055,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1792
   damage: 10
-  destroyEffect: {fileID: 0}
+  destroyEffect: {fileID: 4137373050456899739, guid: be116b506782f14468357c274a03cd09,
+    type: 3}
 --- !u!1 &1039798368
 GameObject:
   m_ObjectHideFlags: 0
