@@ -47,16 +47,7 @@ public class Movement : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
 
-        if (movement.x > 0)
-        {
-            //transform.eulerAngles = new Vector3(0, 0, 0);
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
-        if (movement.x < 0)
-        {
-            //transform.eulerAngles = new Vector3(0, 180, 0);
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
+        
         // ^^ Flips the image of player around so there is no need to create as many sprites
     }
 
