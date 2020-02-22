@@ -32,23 +32,23 @@ public class BossProjectile1 : MonoBehaviour
             if (hitInfo.collider.CompareTag("Player"))
             {
                 Debug.Log("Player Must Take Damage!");
-                hitInfo.collider.GetComponent<PlayerControl>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<Movement>().TakeDamage(damage);
             }
             DestroyProjectile();
         }
-
+        /*
         if (hitInfo.collider != null)
         {
             if (hitInfo.collider == player.transform)
             {
                 DestroyProjectile();
             }
-        }
+        } */
     }
 
     void DestroyProjectile()
     {
-        Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        //Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

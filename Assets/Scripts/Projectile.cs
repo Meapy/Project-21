@@ -23,11 +23,11 @@ public class Projectile : MonoBehaviour
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
         if (hitInfo.collider != null)
-        {
+        {   
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 Debug.Log("Enemy Must Take Damage!");
-                hitInfo.collider.GetComponent<BossControl>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<BirdMovement>().TakeDamage(damage);
             }
             DestroyProjectile();
         }
@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
     
     void DestroyProjectile()
     {
-        Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        //Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
