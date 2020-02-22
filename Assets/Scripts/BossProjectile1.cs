@@ -32,7 +32,7 @@ public class BossProjectile1 : MonoBehaviour
             if (hitInfo.collider.CompareTag("Player"))
             {
                 Debug.Log("Player Must Take Damage!");
-                hitInfo.collider.GetComponent<PlayerControl>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<Movement>().TakeDamage(damage);
             }
             DestroyProjectile();
         }

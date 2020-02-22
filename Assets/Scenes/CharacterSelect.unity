@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 955.1, y: 545.1}
+  m_AnchoredPosition: {x: 951.2, y: 542.2}
   m_SizeDelta: {x: 1886.1, y: 1054.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!81 &264628804
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1466601327}
+      - m_Target: {fileID: 1600170379}
         m_MethodName: Confirm
         m_Mode: 1
         m_Arguments:
@@ -947,7 +947,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1466601327}
+      - m_Target: {fileID: 1600170379}
         m_MethodName: RightArrow
         m_Mode: 1
         m_Arguments:
@@ -1260,21 +1260,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1466601325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 114a6ee718e14a24185fc3134fba3a55, type: 3}
+  m_Script: {fileID: 11500000, guid: 09039f4c7f697cb42be9578fed25dc84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterList:
-  - splash: {fileID: 21300000, guid: c8a742c1f2ebb43b9afe34a47304c051, type: 3}
-    characterName: 1337
-    characterColor: {r: 0.14497972, g: 1, b: 0, a: 1}
-  - splash: {fileID: 21300000, guid: 86ca59b9bca0e409b9ba2784fbe69f01, type: 3}
-    characterName: 7331
-    characterColor: {r: 1, g: 0, b: 1, a: 0}
-  characterName: {fileID: 1754695216}
-  characterSplash: {fileID: 1658412535}
-  backgroundColor: {fileID: 1600170377}
-  arrowclicksfx: {fileID: 0}
-  characterSelectMusic: {fileID: 0}
 --- !u!1 &1600170375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,12 +1351,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1600170375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09039f4c7f697cb42be9578fed25dc84, type: 3}
+  m_Script: {fileID: 11500000, guid: 114a6ee718e14a24185fc3134fba3a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterList: []
-  characterName: {fileID: 0}
-  characterSplash: {fileID: 0}
+  characterList:
+  - splash: {fileID: 21300000, guid: 7f13fe6b6a261f8438b058311591c8fa, type: 3}
+    characterName: Gunman
+    characterColor: {r: 0, g: 0, b: 0, a: 0}
+  - splash: {fileID: 21300000, guid: 03daedbae83ded64cbbdbde3bdfad653, type: 3}
+    characterName: Archer
+    characterColor: {r: 0, g: 0, b: 0, a: 0}
+  characterName: {fileID: 1754695216}
+  characterSplash: {fileID: 1658412535}
   backgroundColor: {fileID: 0}
   arrowclicksfx: {fileID: 0}
   characterSelectMusic: {fileID: 0}
@@ -1406,8 +1400,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.40735, y: 0.0002594}
-  m_SizeDelta: {x: 390.2, y: 535.3}
+  m_AnchoredPosition: {x: -0.000099182, y: 27.897}
+  m_SizeDelta: {x: 862.9, y: 650.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1658412534
 CanvasRenderer:
@@ -1435,7 +1429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 72de0c64f2c6a498096698322c976a67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f13fe6b6a261f8438b058311591c8fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1527,7 +1521,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1466601327}
+      - m_Target: {fileID: 1600170379}
         m_MethodName: LeftArrow
         m_Mode: 1
         m_Arguments:
@@ -1629,7 +1623,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Character name
+  m_text: Gunman
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1674,7 +1668,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 10
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1698,12 +1692,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1754695216}
-    characterCount: 14
+    characterCount: 6
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
