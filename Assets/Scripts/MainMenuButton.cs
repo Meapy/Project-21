@@ -16,7 +16,7 @@ public class MainMenuButton : MonoBehaviour
 
     public void GoToGame()
     {
-        SceneManager.LoadScene("BossFight");
+        SceneManager.LoadScene("BossFight 1");
     }
     public void GoToCharacterSelect()
     {
