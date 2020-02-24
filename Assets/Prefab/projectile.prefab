@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: dde8e46c86f820840ba48243e81c71fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   distance: 0.5
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 1793
   damage: 10
   destroyEffect: {fileID: 6130689774090929180, guid: 5a0e66cdc3323244cb34d75dde18c373,
     type: 3}
