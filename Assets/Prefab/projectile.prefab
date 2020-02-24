@@ -91,15 +91,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5841838157674903570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41308eba219ab1943855c92ec5a501ca, type: 3}
+  m_Script: {fileID: 11500000, guid: ffa27961da8c4da4788ae64c7957faea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  lifetime: 1.4
-  distance: 0.5
+  speed: 7
+  lifetime: 1.2
+  distance: 1.2
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 1536
   damage: 10
   destroyEffect: {fileID: 6130689774090929180, guid: 5a0e66cdc3323244cb34d75dde18c373,
     type: 3}

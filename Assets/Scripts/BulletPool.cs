@@ -30,7 +30,7 @@ public class BulletPool : MonoBehaviour
 
     public GameObject GetBullet()
     {
-        if (bullets.Count > 0)
+        if (bullets.Count > 0) // checks if any bullets are in the pool
         {
             for (int i = 0; i < bullets.Count; i++)
             {
@@ -41,13 +41,13 @@ public class BulletPool : MonoBehaviour
             }
         }
 
-        if (notEnoughBulletsInPool)
+        if (notEnoughBulletsInPool) // if there arent enough we add bullets
         {
             GameObject bul = Instantiate(pooledBullet);
             bul.SetActive(false);
             bullets.Add(bul);
             return bul;
         }
-        return null;
+        return null; // if we cant do any of above
     }
 }
