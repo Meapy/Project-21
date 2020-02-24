@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float speed;
     Vector2 movement;
 
-    private Animator anim;
+    public Animator animator;
 
+    /*
     public float health;
     public Slider playerHealthBar;
     public Transform enemy;
@@ -22,12 +23,17 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
     }
-
+    */
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.magnitude);
+
+        /*
         playerHealthBar.value = health;
 
         if (health <= 0)
@@ -35,6 +41,7 @@ public class PlayerControl : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+        */
     }
 
 
@@ -42,7 +49,8 @@ public class PlayerControl : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-
+    }
+}            /*
         if (movement.x > 0)
         {
             //transform.eulerAngles = new Vector3(0, 0, 0);
@@ -54,8 +62,8 @@ public class PlayerControl : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
         // ^^ Flips the image of player around so there is no need to create as many sprites
-    }
-
+        
+        
     public void TakeDamage(int damage)
     {
         health -= damage;
