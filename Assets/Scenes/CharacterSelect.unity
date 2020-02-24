@@ -1263,12 +1263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09039f4c7f697cb42be9578fed25dc84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterList: []
-  characterName: {fileID: 0}
-  characterSplash: {fileID: 0}
-  backgroundColor: {fileID: 0}
-  arrowclicksfx: {fileID: 0}
-  characterSelectMusic: {fileID: 0}
 --- !u!1 &1600170375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1351,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1600170375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09039f4c7f697cb42be9578fed25dc84, type: 3}
+  m_Script: {fileID: 11500000, guid: 114a6ee718e14a24185fc3134fba3a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterList:
@@ -1365,7 +1359,7 @@ MonoBehaviour:
     characterName: Gunman
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   - splash: {fileID: 21300000, guid: 03daedbae83ded64cbbdbde3bdfad653, type: 3}
-    characterName: Default
+    characterName: Archer
     characterColor: {r: 0, g: 0, b: 0, a: 0}
   characterName: {fileID: 1754695216}
   characterSplash: {fileID: 1658412535}

@@ -620,10 +620,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 316445329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee7cd219f1fd9f4b89dacb13097364f, type: 3}
+  m_Script: {fileID: 11500000, guid: e9f517ccbf5ec99498188cc32d4436b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   health: 100
   playerHealthBar: {fileID: 1255276636}
   enemy: {fileID: 1096931094}
@@ -660,7 +660,7 @@ Animator:
   m_GameObject: {fileID: 316445329}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: beed7ce4adeb3c14b9ce9acdc47d5a5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 84da507fc55be994a945daaa061ffad1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1045,14 +1045,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 848074090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42fb504a803c4c045a5048b7207245c4, type: 3}
+  m_Script: {fileID: 11500000, guid: ffa27961da8c4da4788ae64c7957faea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: -90
-  projectile: {fileID: 5841838157674903570, guid: 4f37eb3a7162d514295bef4db9969525,
+  speed: 5
+  lifetime: 5
+  distance: 10
+  whatIsSolid:
+    serializedVersion: 2
+    m_Bits: 1792
+  damage: 10
+  destroyEffect: {fileID: 4137373050456899739, guid: be116b506782f14468357c274a03cd09,
     type: 3}
-  shotPoint: {fileID: 86328871}
-  starttimeBetweenShot: 0.3
 --- !u!1 &1039798368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,20 +1400,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1096931089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93e30931f69dcce48a21a6e5bdccd858, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cf89278fe6d66945bd4602bce07e619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  stoppingDistance: 7
-  retreatDistance: 4
-  startDistance: 8
-  startTimeBetweenShots: 1
-  BossProjectile1: {fileID: 4137373050456899739, guid: be116b506782f14468357c274a03cd09,
+  speed: 10
+  stoppingDistance: 5
+  retreatDistance: 5
+  startDistance: 0
+  startTimeBetweenShots: 0
+  BossProjectile1: {fileID: 5841838157674903570, guid: 4f37eb3a7162d514295bef4db9969525,
     type: 3}
-  deathEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,
-    type: 3}
-  bossHealthBar: {fileID: 1396459178}
-  health: 50
+  deathEffect: {fileID: 0}
+  bossHealthBar: {fileID: 0}
+  health: 0
 --- !u!1 &1255276634
 GameObject:
   m_ObjectHideFlags: 0
