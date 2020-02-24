@@ -7,11 +7,15 @@ public class BirdBullet : MonoBehaviour
     private Vector2 moveDirection;
     public float bulletSpeed;
 
+    private void OnEnable()
+    {
+        Invoke("Destroy", 3f);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-            
+        
     }
 
     // Update is called once per frame
@@ -22,16 +26,18 @@ public class BirdBullet : MonoBehaviour
 
     public void SetMoveDirection(Vector2 dir)
     {
-        moveDirection = dir;
+        moveDirection = dir;// Uses FireBullet to create the direction that the bullet will travel
     }
 
-    private void OnDestroy()
+    private void Destroy()
     {
         gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
-        CancelInvoke();        
+        CancelInvoke();        // When object is destroyed it cancels invoke 
     }
 }
+
+

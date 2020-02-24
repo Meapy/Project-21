@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour
     public Slider playerHealthBar;
     public Transform enemy;
     public GameObject deathEffect;
+    public GameObject hitEffect;
 
     void Start()
     {
@@ -69,6 +70,16 @@ public class PlayerControl : MonoBehaviour
         health -= damage;
         Debug.Log("Player Health is " + health);
     }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Hit Detected");
+        GameObject e = Instantiate(hitEffect) as GameObject;
+        e.transform.position = transform.position;
+        other.gameObject.SetActive(false);
+        TakeDamage(10);
+    }
+
 }
 
 // Keep this code for when adding animations :) 
