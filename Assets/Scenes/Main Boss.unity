@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 455180020}
   - component: {fileID: 455180019}
   - component: {fileID: 455180023}
-  - component: {fileID: 455180017}
+  - component: {fileID: 455180018}
   m_Layer: 9
   m_Name: BIRD
   m_TagString: Enemy
@@ -496,7 +496,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &455180017
+--- !u!114 &455180018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -505,10 +505,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 455180016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 894d930d876efef4ebecdabd2d24e670, type: 3}
+  m_Script: {fileID: 11500000, guid: e6421ff3414e2d54ab8cfb9e1943b528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletsAmount: 15
+  bulletsAmount: 12
   startAngle: 0
   endAngle: 360
 --- !u!212 &455180019
@@ -633,10 +633,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 455180016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c27f477b773bd4e8def9aaf798fefc, type: 3}
+  m_Script: {fileID: 11500000, guid: e66487634c7d67d4380cd457024b5534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 4
   bossHealthBar: {fileID: 344242932}
   health: 50
   deathEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,
@@ -651,6 +651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 483190563}
   - component: {fileID: 483190564}
+  - component: {fileID: 483190565}
   m_Layer: 11
   m_Name: ShotPoint
   m_TagString: Untagged
@@ -722,6 +723,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &483190565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483190562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa27961da8c4da4788ae64c7957faea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  lifetime: 3
+  distance: 3
+  whatIsSolid:
+    serializedVersion: 2
+    m_Bits: 1536
+  damage: 10
+  destroyEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,
+    type: 3}
 --- !u!1 &574692647
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,8 +930,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797351184}
   m_LocalRotation: {x: -0, y: -0, z: -0.70408225, w: 0.7101185}
-  m_LocalPosition: {x: 0.13421412, y: -0.058704045, z: 0}
-  m_LocalScale: {x: 0.03457371, y: 0.02809, z: 1}
+  m_LocalPosition: {x: 0.13421413, y: -0.05870404, z: 0}
+  m_LocalScale: {x: 0.03457372, y: 0.028090006, z: 1}
   m_Children:
   - {fileID: 483190563}
   m_Father: {fileID: 998322334}
@@ -928,10 +950,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: -90
-  projectile: {fileID: 5841838157674903570, guid: 4f37eb3a7162d514295bef4db9969525,
+  projectile: {fileID: 1986627359898971445, guid: 9e9114ecfc616a74485f71912c212d0b,
     type: 3}
   shotPoint: {fileID: 483190563}
-  starttimeBetweenShot: 0.3
+  starttimeBetweenShot: 0.7
 --- !u!212 &797351187
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1176,7 +1198,7 @@ Animator:
   m_GameObject: {fileID: 998322328}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: beed7ce4adeb3c14b9ce9acdc47d5a5e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 07a971feaaf524a41b6c5d27f27119bf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1224,7 +1246,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 72de0c64f2c6a498096698322c976a67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35ccd8a79a42e18409e516831bb79eb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1247,14 +1269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f517ccbf5ec99498188cc32d4436b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 998322332}
   speed: 4
-  health: 5000
-  playerHealthBar: {fileID: 1364616553}
-  enemy: {fileID: 455180022}
-  deathEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,
-    type: 3}
-  hitEffect: {fileID: 6130689774090929180, guid: 5a0e66cdc3323244cb34d75dde18c373,
-    type: 3}
+  animator: {fileID: 998322329}
 --- !u!50 &998322332
 Rigidbody2D:
   serializedVersion: 4
@@ -1293,7 +1310,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.33, y: 0.32}
+    oldSize: {x: 3.84, y: 2.16}
     newSize: {x: 0.33, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1686,6 +1703,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2125290191}
   - component: {fileID: 2125290190}
+  - component: {fileID: 2125290192}
   m_Layer: 0
   m_Name: BulletPool
   m_TagString: Untagged
@@ -1705,8 +1723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774427ef044837f488a901b037cb22e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledBullet: {fileID: 1462444054566137914, guid: 81ef07bbfe14cc24984fcf96958d72b7,
-    type: 3}
 --- !u!4 &2125290191
 Transform:
   m_ObjectHideFlags: 0
@@ -1721,3 +1737,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2125290192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125290189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf23e87e48232764aac704e474e92054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledBullet: {fileID: 1462444054566137914, guid: 81ef07bbfe14cc24984fcf96958d72b7,
+    type: 3}
