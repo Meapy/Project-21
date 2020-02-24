@@ -918,9 +918,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1096931089}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28cc8c566abd3e9438df9840e2ed6e51, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cf89278fe6d66945bd4602bce07e619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  stoppingDistance: 10
+  retreatDistance: 10
+  startDistance: 0
+  startTimeBetweenShots: 5
+  BossProjectile1: {fileID: 5841838157674903570, guid: 4f37eb3a7162d514295bef4db9969525,
+    type: 3}
+  deathEffect: {fileID: 6130689774090929180, guid: 5a0e66cdc3323244cb34d75dde18c373,
+    type: 3}
+  bossHealthBar: {fileID: 1396459178}
+  health: 100
 --- !u!1 &1255276634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,8 +1101,8 @@ MonoBehaviour:
   speed: 5
   anim: {fileID: 1293316933}
   health: 50
-  playerHealthBar: {fileID: 0}
-  enemy: {fileID: 0}
+  playerHealthBar: {fileID: 1255276636}
+  enemy: {fileID: 1096931094}
   deathEffect: {fileID: 6130689774090929180, guid: 5a0e66cdc3323244cb34d75dde18c373,
     type: 3}
 --- !u!95 &1293316933
@@ -1218,7 +1229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293316931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.66, y: -33.44, z: -2.9734507}
+  m_LocalPosition: {x: 18.3, y: 6.6, z: -2.9734507}
   m_LocalScale: {x: 4.724045, y: 3.685947, z: 1}
   m_Children:
   - {fileID: 85277696}
@@ -1305,14 +1316,14 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 0
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 364372596}
   m_FillRect: {fileID: 350944873}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 50
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
