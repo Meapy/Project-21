@@ -10,6 +10,8 @@ public class PlayerControl : MonoBehaviour
     Vector2 movement;
 
     public Animator animator;
+
+    
     public float health;
     public Slider playerHealthBar;
     public Transform enemy;
@@ -20,7 +22,7 @@ public class PlayerControl : MonoBehaviour
 
     void Start()
     {
-     //   anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
     }
@@ -35,7 +37,7 @@ public class PlayerControl : MonoBehaviour
         animator.SetFloat("Speed", movement.magnitude);
         
 
-        
+        /*
         playerHealthBar.value = health;
 
         if (health <= 0)
@@ -43,22 +45,7 @@ public class PlayerControl : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        Debug.Log("Player Health is " + health);
-    }
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Hit Detected");
-        GameObject e = Instantiate(hitEffect) as GameObject;
-        e.transform.position = transform.position;
-        other.gameObject.SetActive(false);
-        TakeDamage(10);
+        */
     }
 
     void FixedUpdate()
