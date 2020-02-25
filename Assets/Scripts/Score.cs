@@ -9,19 +9,14 @@ public class Score : MonoBehaviour
     public int maxtime = 360;
     public int BossScore = 500;
 
-    totalScore = maxtime + BossScore;
+    public Transform player;
 
 
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(player.position.z);
     }
 }
