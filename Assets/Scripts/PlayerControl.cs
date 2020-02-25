@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour
 
     void Start()
     {
-        //anim = GetComponent<Animator>();
+     //   anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
     }
