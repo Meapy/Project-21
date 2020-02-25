@@ -13,28 +13,38 @@ public class Score : MonoBehaviour
     public int timeleft;
     public int startTime;
 
+    public bool countdown = false;
+
     public Transform player;
     public TextMeshProUGUI scoreText;
 
 
     void Start()
     {
-        startTime = maxtime * 60;
+        startTime = maxtime;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        getScore();
+        if (countdown == false)
+        {
+            countdown = true;
+            StartCoroutine(TimeCountdown());
+        }
         
     }
 
-    void getScore()
+
+    IEnumerator TimeCountdown()
     {
+
         startTime--;
         timeleft = startTime;
-        totalScore = (timeleft + BossScore) / 60;
+        totalScore = (timeleft + BossScore);
         scoreText.text = totalScore.ToString();
+        yield return new WaitForSeconds(1);
+        countdown = false;
+
     }
 }
