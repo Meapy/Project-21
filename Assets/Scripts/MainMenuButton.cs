@@ -16,15 +16,15 @@ public class MainMenuButton : MonoBehaviour
 
     public void GoToLevelOne()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level 1");
     }
     public void GoToLevelTwo()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level 2");
     }
     public void GoToLevelThree()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Level 3");
     }
 
     public void GoToCharacterSelect()
