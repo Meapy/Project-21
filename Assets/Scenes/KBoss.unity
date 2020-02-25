@@ -802,7 +802,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b9387d78dc4b428499562cd3e87c3154, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10212,9 +10212,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 50
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13499,11 +13499,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66487634c7d67d4380cd457024b5534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
   xPosition: 0
   bossHealthBar: {fileID: 608929608}
-  health: 50
+  health: 100
   deathEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,
+    type: 3}
+  startTimeBetweenShots: 0.4
+  BirdProjectile: {fileID: 7863583637834330441, guid: f9748a72fd0bb3742a93ec063e81901a,
+    type: 3}
+  BirdProjectileLow: {fileID: 8389066991325469329, guid: ddf25d9ca22412a44ad4d05e417e25eb,
     type: 3}
 --- !u!212 &1502084370
 SpriteRenderer:
@@ -13808,7 +13812,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016398683, y: -0.027498834}
+  m_Offset: {x: -0.0071756244, y: -0.011736698}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13819,7 +13823,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18047571, y: 0.19130711}
+  m_Size: {x: 0.2604047, y: 0.31740373}
   m_EdgeRadius: 0
 --- !u!4 &1690316101
 Transform:
@@ -13829,7 +13833,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690316095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 91.33, y: -21.09, z: -2.9734507}
+  m_LocalPosition: {x: 75.55, y: -37.86, z: -2.9734507}
   m_LocalScale: {x: 4.724045, y: 3.685947, z: 1}
   m_Children:
   - {fileID: 401803023}
@@ -13855,7 +13859,7 @@ MonoBehaviour:
   rb: {fileID: 1690316099}
   speed: 15
   animator: {fileID: 1690316097}
-  health: 50
+  health: 5000000
   playerHealthBar: {fileID: 1132657094}
   enemy: {fileID: 1502084373}
   deathEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,

@@ -5,7 +5,9 @@ using UnityEngine;
 public class BirdBullet : MonoBehaviour
 {
     private Vector2 moveDirection;
+    private Vector2 moveDirection2;
     public float bulletSpeed;
+    public float bulletSpeed2;
 
     private void OnEnable()
     {
@@ -21,12 +23,20 @@ public class BirdBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(moveDirection * bulletSpeed * Time.deltaTime);
+        if (BirdMovement.bossHealth > 70)
+        {
+            transform.Translate(moveDirection * bulletSpeed * Time.deltaTime);
+        }
+        if (BirdMovement.bossHealth < 71)
+        {
+            transform.Translate(moveDirection * bulletSpeed2 * Time.deltaTime);
+        }
     }
 
     public void SetMoveDirection(Vector2 dir)
     {
-        moveDirection = dir;// Uses FireBullet to create the direction that the bullet will travel
+        // Uses FireBullet to create the direction that the bullet will travel
+        moveDirection = dir;
     }
 
     private void Destroy()
