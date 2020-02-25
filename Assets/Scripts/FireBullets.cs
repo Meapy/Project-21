@@ -2,21 +2,42 @@
 
 public class FireBullets : MonoBehaviour
 {
+    // Phase 1 
     public int bulletsAmount;
     public float startAngle;
     public float endAngle;
     private Vector2 bulletMoveDirection;
+    private bool stage1counter = true;
+    private bool stage2counter = true;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Fire", 0.1f, 2f);
+
     }
 
     // Update is called once per frame
     void Update()
     {
- 
+        
+        if (BirdMovement.bossHealth >= 71) // Stage 1
+        {
+            if (stage1counter == true)
+            {
+                InvokeRepeating("Fire", 0.1f, 1.5f);
+                stage1counter = false;
+            }
+        }
+        if (BirdMovement.bossHealth >= 31 && BirdMovement.bossHealth < 71) // Stage 2
+        {
+            if (stage2counter == true)
+            {
+                CancelInvoke("Fire");
+                InvokeRepeating("Fire", 0.1f, 1f);
+                stage2counter = false;
+            }
+        }
     }
 
     private void Fire()
