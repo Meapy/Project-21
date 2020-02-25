@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
             if (hitInfo.collider.CompareTag("MiniBoss"))
             {
                 Debug.Log("MiniBoss Must Take Damage!");
-                hitInfo.collider.GetComponent<BirdPhase1>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<BirdBehaviour>().TakeDamage(damage);
             }
 
             DestroyProjectile();
