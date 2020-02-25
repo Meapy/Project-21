@@ -14,17 +14,26 @@ public class MainMenuButton : MonoBehaviour
         SceneManager.LoadScene("LevelSelect");
     }
 
-    public void GoToGame()
+    public void GoToLevelOne()
     {
-        SceneManager.LoadScene("BossFight 1");
+        SceneManager.LoadScene("Level1");
     }
+    public void GoToLevelTwo()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+    public void GoToLevelThree()
+    {
+        SceneManager.LoadScene("Level3");
+    }
+
     public void GoToCharacterSelect()
     {
         SceneManager.LoadScene("CharacterSelect");
     }
     public void GoToSettings()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("SettingsMenu");
     }
     public void GoToExit()
     {

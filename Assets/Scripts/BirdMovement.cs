@@ -8,6 +8,8 @@ public class BirdMovement : MonoBehaviour
     public float moveSpeed;
     private bool moveRight;
 
+    public float xPosition; // used to set the x axis of the bird
+
     public Slider bossHealthBar;
     public float health;
     public GameObject deathEffect;
@@ -29,12 +31,12 @@ public class BirdMovement : MonoBehaviour
         if (player != null)
         {
 
-            if (transform.position.x > 2f)
+            if (transform.position.x > xPosition)
             {
                 moveRight = false;
                 transform.localRotation = Quaternion.Euler(0, 180, 0);
             }
-            else if (transform.position.x < -2f)
+            else if (transform.position.x < xPosition - 2f)
             {
                 moveRight = true;
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
