@@ -13,6 +13,14 @@ public class Score : MonoBehaviour
     public int timeleft;
     public int startTime;
 
+    public int level1score = 0;
+    public int level2score = 0;
+    public int level3score = 0;
+
+    public static int Level1Highscore = 0;
+    public static int Level2Highscore = 0;
+    public static int Level3Highscore = 0;
+
     public bool countdown = false;
 
     public Transform player;
