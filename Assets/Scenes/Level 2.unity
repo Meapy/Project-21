@@ -115540,6 +115540,7 @@ GameObject:
   - component: {fileID: 2069978570}
   - component: {fileID: 2069978569}
   - component: {fileID: 2069978568}
+  - component: {fileID: 2069978571}
   m_Layer: 0
   m_Name: Tilemap_Walls
   m_TagString: Untagged
@@ -133627,6 +133628,26 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2069978571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069978566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c42e07b765b025f439e28984bc448cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  lifetime: 0
+  distance: 0
+  whatIsSolid:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 0
+  destroyEffect: {fileID: 0}
 --- !u!1 &2075834164
 GameObject:
   m_ObjectHideFlags: 0
