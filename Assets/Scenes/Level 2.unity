@@ -1986,7 +1986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5741407bd739b40b927f29928ef989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xPosition: 0
+  xPosition: 12
   Phases: 1
   bossHealthBar: {fileID: 1326315094}
   health: 50
@@ -3189,7 +3189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5741407bd739b40b927f29928ef989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xPosition: 0
+  xPosition: 28
   Phases: 2
   bossHealthBar: {fileID: 397980668}
   health: 100
@@ -4906,7 +4906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5741407bd739b40b927f29928ef989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xPosition: 0
+  xPosition: 45
   Phases: 0
   bossHealthBar: {fileID: 989871955}
   health: 50
@@ -117326,9 +117326,9 @@ GameObject:
   - component: {fileID: 2069978570}
   - component: {fileID: 2069978569}
   - component: {fileID: 2069978568}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tilemap_Walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

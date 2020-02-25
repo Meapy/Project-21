@@ -28,6 +28,7 @@ public class BirdBehaviour : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,31 +43,31 @@ public class BirdBehaviour : MonoBehaviour
         {
             bossHealthBar.value = health;
             bossHealth = health;
-            /*
-            if (player != null)
-            {
-
-                if (transform.position.x > xPosition)
-                {
-                    moveRight = false;
-                    transform.localRotation = Quaternion.Euler(0, 180, 0);
-                }
-                else if (transform.position.x < xPosition - 2f)
-                {
-                    moveRight = true;
-                    transform.localRotation = Quaternion.Euler(0, 0, 0);
-                }
-
-                if (moveRight)
-                {
-                    transform.position = new Vector2(transform.position.x + moveSpeed * Time.deltaTime, transform.position.y);
-
-                }
-                else
-                {
-                    transform.position = new Vector2(transform.position.x - moveSpeed * Time.deltaTime, transform.position.y);
-                }
-            }*/
+            
+            //if (player != null)
+            //{
+            //
+            //    if (transform.position.x > xPosition)
+            //    {
+            //        moveRight = false;
+            //        transform.localRotation = Quaternion.Euler(0, 180, 0);
+            //    }
+            //    else if (transform.position.x < xPosition - 2f)
+            //    {
+            //        moveRight = true;
+            //        transform.localRotation = Quaternion.Euler(0, 0, 0);
+            //    }
+            //
+            //    if (moveRight)
+            //    {
+            //        transform.position = new Vector2(transform.position.x + moveSpeed * Time.deltaTime, transform.position.y);
+            //
+            //    }
+            //    else
+            //    {
+            //        transform.position = new Vector2(transform.position.x - moveSpeed * Time.deltaTime, transform.position.y);
+            //    }
+            //}
             // Boss Shooting
             if(Phases == 2)
             {
