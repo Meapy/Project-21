@@ -574,7 +574,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.7421799, y: -4.982129}
+  m_Offset: {x: -2.2693691, y: -1.8184319}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -585,7 +585,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 64.843315, y: 65.07792}
+  m_Size: {x: 51.136387, y: 58.750526}
   m_EdgeRadius: 0
 --- !u!50 &455180021
 Rigidbody2D:
@@ -731,7 +731,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483190562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffa27961da8c4da4788ae64c7957faea, type: 3}
   m_Name: 
@@ -954,7 +954,7 @@ MonoBehaviour:
   projectile: {fileID: 1986627359898971445, guid: 9e9114ecfc616a74485f71912c212d0b,
     type: 3}
   shotPoint: {fileID: 483190563}
-  starttimeBetweenShot: 0.7
+  starttimeBetweenShot: 0.2
 --- !u!212 &797351187
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1273,6 +1273,13 @@ MonoBehaviour:
   rb: {fileID: 998322332}
   speed: 4
   animator: {fileID: 998322329}
+  health: 50
+  playerHealthBar: {fileID: 1364616553}
+  enemy: {fileID: 455180022}
+  deathEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,
+    type: 3}
+  hitEffect: {fileID: 6130689774090929180, guid: 5a0e66cdc3323244cb34d75dde18c373,
+    type: 3}
 --- !u!50 &998322332
 Rigidbody2D:
   serializedVersion: 4
@@ -1831,7 +1838,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2125290191}
-  - component: {fileID: 2125290190}
   - component: {fileID: 2125290192}
   m_Layer: 0
   m_Name: BulletPool
@@ -1840,18 +1846,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2125290190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125290189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774427ef044837f488a901b037cb22e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2125290191
 Transform:
   m_ObjectHideFlags: 0

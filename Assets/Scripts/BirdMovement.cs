@@ -27,10 +27,10 @@ public class BirdMovement : MonoBehaviour
     void Update()
     {
         bossHealthBar.value = health;
-
+        /*
         if (player != null)
         {
-
+           
             if (transform.position.x > xPosition)
             {
                 moveRight = false;
@@ -51,13 +51,13 @@ public class BirdMovement : MonoBehaviour
             {
                 transform.position = new Vector2(transform.position.x - moveSpeed * Time.deltaTime, transform.position.y);
             }
+        }*/
 
-            if (health <= 0)
-            {
-                //Instantiate(deathEffect, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+        if (health <= 0)
+        {
+            //Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
 
-            }
         }
     }
 
