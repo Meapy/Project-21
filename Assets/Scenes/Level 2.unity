@@ -1883,7 +1883,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1517216471}
-  - component: {fileID: 1517216470}
   - component: {fileID: 1517216469}
   m_Layer: 0
   m_Name: BulletPool
@@ -1906,18 +1905,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledBullet: {fileID: 1462444054566137914, guid: 81ef07bbfe14cc24984fcf96958d72b7,
     type: 3}
---- !u!114 &1517216470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1517216468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774427ef044837f488a901b037cb22e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1517216471
 Transform:
   m_ObjectHideFlags: 0
