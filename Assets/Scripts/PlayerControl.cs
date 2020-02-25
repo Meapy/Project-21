@@ -16,7 +16,6 @@ public class PlayerControl : MonoBehaviour
     public GameObject deathEffect;
     public GameObject hitEffect;
 
-
     void Start()
     {
      //   anim = GetComponent<Animator>();
@@ -32,6 +31,7 @@ public class PlayerControl : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.magnitude);
+        
 
         
         playerHealthBar.value = health;
@@ -58,8 +58,6 @@ public class PlayerControl : MonoBehaviour
         other.gameObject.SetActive(false);
         TakeDamage(10);
     }
-
-
 
     void FixedUpdate()
     {
