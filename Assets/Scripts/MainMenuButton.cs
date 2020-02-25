@@ -24,7 +24,7 @@ public class MainMenuButton : MonoBehaviour
     }
     public void GoToSettings()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("SettingsMenu");
     }
     public void GoToExit()
     {
