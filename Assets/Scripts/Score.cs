@@ -8,22 +8,22 @@ using TMPro;
 public class Score : MonoBehaviour
 {
 
-    public int totalScore;
-    public int maxtime = 360;
-    public int BossScore = 500;
-    public int timeleft;
-    public int startTime;
-    public int level;
+    public long totalScore;
+    public long maxtime = 360;
+    public long BossScore = 500;
+    public long timeleft;
+    public long startTime;
+    public long level;
 
-    public int level1score = 0;
-    public int level2score = 0;
-    public int level3score = 0;
+    public long level1score = 0;
+    public long level2score = 0;
+    public long level3score = 0;
 
-    public static int Level1Highscore = 0;
-    public static int Level2Highscore = 0;
-    public static int Level3Highscore = 0;
+    public static long Level1Highscore = 0;
+    public static long Level2Highscore = 0;
+    public static long Level3Highscore = 0;
 
-    public static int BossKill;
+    public static long BossKill;
 
     public bool countdown = false;
 
@@ -75,7 +75,7 @@ public class Score : MonoBehaviour
             Level3Highscore = level3score;
             HighscoreText.text = totalScore.ToString();
         }
-
+       
     }
 
 
@@ -100,7 +100,10 @@ public class Score : MonoBehaviour
         TimeLeftText.text = timeleft.ToString();
         yield return new WaitForSeconds(1);
         countdown = false;
+    }
 
-
+    void GetTotalScore()
+    {
+        totalScore = totalScore + timeleft;
     }
 }

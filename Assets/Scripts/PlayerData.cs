@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerData
 {
 
-    public int Level1Highscore;
-    public int Level2Highscore;
-    public int Level3Highscore;
+    public long Level1Highscore;
+    public long Level2Highscore;
+    public long Level3Highscore;
 
     public PlayerData(LoadGame player)
     {

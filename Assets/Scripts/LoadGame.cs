@@ -11,9 +11,9 @@ public class LoadGame : MonoBehaviour
     public TextMeshProUGUI Level2HighscoreDisplay;
     public TextMeshProUGUI Level3HighscoreDisplay;
 
-    public static int Level1Highscore;
-    public static int Level2Highscore;
-    public static int Level3Highscore;
+    public static long Level1Highscore;
+    public static long Level2Highscore;
+    public static long Level3Highscore;
 
 
     public void SaveGame()

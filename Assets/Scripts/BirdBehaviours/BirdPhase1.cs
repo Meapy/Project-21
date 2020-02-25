@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BirdMovement : MonoBehaviour
+public class BirdPhase1 : MonoBehaviour
 {
     //public float moveSpeed;
     //private bool moveRight;
 
     public float xPosition; // used to set the x axis of the bird
+
+    public float Phases;
 
     public Slider bossHealthBar;
     public float health;
@@ -23,6 +25,7 @@ public class BirdMovement : MonoBehaviour
     private float timeBetweenShots2;
     public GameObject BirdProjectile;
     public GameObject BirdProjectileLow;
+
 
 
     // Start is called before the first frame update
@@ -65,35 +68,48 @@ public class BirdMovement : MonoBehaviour
                 }
             }*/
             // Boss Shooting
-            if (bossHealth > 71)
+            if(Phases == 2)
             {
-                if (timeBetweenShots1 <= 0)
+                if (bossHealth < 71)
                 {
-                    Instantiate(BirdProjectile, transform.position, Quaternion.identity); // creates projectile from BossProjectile1
-                    timeBetweenShots1 = startTimeBetweenShots; // Limits boss to shooting only a certain amount of times
+                    phase1();
                 }
-                else
+
+                if (bossHealth < 51)
                 {
-                    timeBetweenShots1 -= Time.deltaTime; // Counts down timer before boss can shoot again
+                    phase2();
                 }
             }
-            if(bossHealth < 71)
-            {   
-                if (timeBetweenShots2 <= 0)
+            else if(Phases == 1)
+            {
+                if (bossHealth < 71)
                 {
-                    Instantiate(BirdProjectileLow, transform.position, Quaternion.identity); // creates projectile from BossProjectile1
-                    timeBetweenShots2 = startTimeBetweenShots; // Limits boss to shooting only a certain amount of times
+                    phase1();
                 }
-                else
+            }
+            else if (Phases == 0)
+            {
+                if (bossHealth < 71)
                 {
-                    timeBetweenShots2 -= Time.deltaTime; // Counts down timer before boss can shoot again
+                    phase2();
                 }
             }
 
             if (health <= 0)
             {
                 //Instantiate(deathEffect, transform.position, Quaternion.identity);
-                Score.BossKill = Score.BossKill  + 500;
+                if(Phases == 2)
+                {
+                    Score.BossKill = Score.BossKill + 500;
+                }
+                else if (Phases == 1)
+                {
+                    Score.BossKill = Score.BossKill + 300;
+                }
+                else if (Phases == 0)
+                {
+                    Score.BossKill = Score.BossKill + 300;
+                }
                 Destroy(gameObject);
 
             }
@@ -105,4 +121,32 @@ public class BirdMovement : MonoBehaviour
         health -= damage;
         Debug.Log("Boss Health is " + health);
     }
+
+    public void phase1()
+    {
+
+        if (timeBetweenShots1 <= 0)
+        {
+            Instantiate(BirdProjectile, transform.position, Quaternion.identity); // creates projectile from BossProjectile1
+            timeBetweenShots1 = startTimeBetweenShots; // Limits boss to shooting only a certain amount of times
+        }
+        else
+        {
+            timeBetweenShots1 -= Time.deltaTime; // Counts down timer before boss can shoot again
+        }
+
+    }
+
+    public void phase2()
+    {
+            if (timeBetweenShots2 <= 0)
+            {
+                Instantiate(BirdProjectileLow, transform.position, Quaternion.identity); // creates projectile from BossProjectile1
+                timeBetweenShots2 = startTimeBetweenShots; // Limits boss to shooting only a certain amount of times
+            }
+            else
+            {
+                timeBetweenShots2 -= Time.deltaTime; // Counts down timer before boss can shoot again
+            }
+        }
 }
