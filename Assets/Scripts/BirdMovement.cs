@@ -93,7 +93,6 @@ public class BirdMovement : MonoBehaviour
             if (health <= 0)
             {
                 //Instantiate(deathEffect, transform.position, Quaternion.identity);
-                Score.BossKill = Score.BossKill  + 500;
                 Destroy(gameObject);
 
             }

@@ -7,7 +7,6 @@ TagManager:
   - Ground
   - Enemy
   - Wall
-  - MiniBoss
   layers:
   - Default
   - TransparentFX
