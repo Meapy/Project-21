@@ -26,6 +26,8 @@ public class BirdBehaviour : MonoBehaviour
     public GameObject BirdProjectile;
     public GameObject BirdProjectileLow;
 
+    public GameObject EndLevel;
+
 
 
 
@@ -102,6 +104,8 @@ public class BirdBehaviour : MonoBehaviour
                 if(Phases == 2)
                 {
                     Score.BossKill = Score.BossKill + 500;
+                    EndLevel.SetActive(true);
+
                 }
                 else if (Phases == 1)
                 {
@@ -121,6 +125,7 @@ public class BirdBehaviour : MonoBehaviour
     {
         health -= damage;
         Debug.Log("Boss Health is " + health);
+        
     }
 
     public void phase1()
