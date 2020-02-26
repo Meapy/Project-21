@@ -21,7 +21,7 @@ public class FireBullets : MonoBehaviour
     void Update()
     {
         
-        if (BirdMovement.bossHealth >= 71) // Stage 1
+        if (BirdMovement.bossHealth >= 71 || BirdBehaviour.bossHealth >= 71) // Stage 1
         {
             if (stage1counter == true)
             {
@@ -29,7 +29,7 @@ public class FireBullets : MonoBehaviour
                 stage1counter = false;
             }
         }
-        if (BirdMovement.bossHealth >= 31 && BirdMovement.bossHealth < 71) // Stage 2
+        if ((BirdMovement.bossHealth >= 31 && BirdMovement.bossHealth < 71) || (BirdBehaviour.bossHealth >= 31 && BirdBehaviour.bossHealth < 71)) // Stage 2
         {
             if (stage2counter == true)
             {

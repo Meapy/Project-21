@@ -34,6 +34,11 @@ public class Projectile : MonoBehaviour
                 Debug.Log("Swamp Enemy Must Take Damage!");
                 hitInfo.collider.GetComponent<TreeMovement>().TakeDamage(damage);
             }
+            if (hitInfo.collider.CompareTag("MiniBoss"))
+            {
+                Debug.Log("MiniBoss Must Take Damage!");
+                hitInfo.collider.GetComponent<BirdBehaviour>().TakeDamage(damage);
+            }
             DestroyProjectile();
         }
 
