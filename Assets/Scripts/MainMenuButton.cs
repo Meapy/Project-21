@@ -40,6 +40,11 @@ public class MainMenuButton : MonoBehaviour
         Application.Quit();
     }
 
+    public void GoToGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
