@@ -63,17 +63,17 @@ public class Score : MonoBehaviour
         if(level1score > Level1Highscore)
         {
             Level1Highscore = level1score;
-            HighscoreText.text = totalScore.ToString();
+            HighscoreText.text = "Highscore: " + totalScore.ToString();
         }
         if (level2score > Level2Highscore)
         {
             Level2Highscore = level2score;
-            HighscoreText.text = totalScore.ToString();
+            HighscoreText.text = "Highscore: " + totalScore.ToString();
         }
         if (level3score > Level3Highscore)
         {
             Level3Highscore = level3score;
-            HighscoreText.text = totalScore.ToString();
+            HighscoreText.text = "Highscore: " + totalScore.ToString();
         }
        
     }
@@ -96,8 +96,8 @@ public class Score : MonoBehaviour
         {
             level3score = totalScore;
         }
-        scoreText.text = totalScore.ToString();
-        TimeLeftText.text = timeleft.ToString();
+        scoreText.text = "Score: "+ totalScore.ToString();
+        TimeLeftText.text = "Time left: " + timeleft.ToString();
         yield return new WaitForSeconds(1);
         countdown = false;
     }
