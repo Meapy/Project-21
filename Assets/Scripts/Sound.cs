@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class Sound : MonoBehaviour
 {
-    private static Sound instance = null;
-    public static Sound Instance
+    private static Sound instance;
+
+    /*
+    public static Sound Instance 
+    
+
     {
         get { return instance; }
     }
+    */
 
     void Awake()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        else
+        if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(instance);
         }
-        DontDestroyOnLoad(this.gameObject);
+
+        if (Application.loadedLevel == 2)
+        {
+            Destroy(gameObject);
+        }
     }
 }
+
+    

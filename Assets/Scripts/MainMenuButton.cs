@@ -40,4 +40,8 @@ public class MainMenuButton : MonoBehaviour
         Application.Quit();
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
