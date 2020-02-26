@@ -10225,7 +10225,8 @@ MonoBehaviour:
   animator: {fileID: 772021319}
   health: 50000
   playerHealthBar: {fileID: 1870469733}
-  enemy: {fileID: 0}
+  enemy: {fileID: 1502084373}
+  swamp: {fileID: 0}
   deathEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,
     type: 3}
   hitEffect: {fileID: 6130689774090929180, guid: 5a0e66cdc3323244cb34d75dde18c373,

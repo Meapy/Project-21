@@ -22,7 +22,6 @@ public class TreeMovement : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        targetLeft = GameObject.FindGameObjectWithTag("TargetLeft").transform;
     }
 
     // Update is called once per frame
