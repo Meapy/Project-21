@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour
     public float health;
     public Slider playerHealthBar;
     public Transform enemy;
+    public Transform swamp;
     public GameObject deathEffect;
     public GameObject hitEffect;
 
@@ -21,6 +22,7 @@ public class PlayerControl : MonoBehaviour
      //   anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+        swamp = GameObject.FindGameObjectWithTag("Swamp").transform;
     }
     
     void Update()
@@ -51,6 +53,7 @@ public class PlayerControl : MonoBehaviour
         animator.SetTrigger("isHurt");
         StartCoroutine(TimeCountdown());
         animator.SetTrigger("isIdle");
+        animator.SetTrigger("isMove");
     }
     IEnumerator TimeCountdown()
     {
