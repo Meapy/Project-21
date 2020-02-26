@@ -105,7 +105,7 @@ public class BirdBehaviour : MonoBehaviour
                 {
                     Score.BossKill = Score.BossKill + 500;
                     EndLevel.SetActive(true);
-
+                    Score.LevelDone = true;
                 }
                 else if (Phases == 1)
                 {

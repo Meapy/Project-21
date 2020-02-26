@@ -26,6 +26,7 @@ public class Score : MonoBehaviour
     public static long BossKill;
 
     public bool countdown = false;
+    public static bool LevelDone = false;
 
     public Transform player;
     public TextMeshProUGUI scoreText;
@@ -62,6 +63,12 @@ public class Score : MonoBehaviour
         {
             countdown = true;
             StartCoroutine(TimeCountdown());
+            if (LevelDone)
+            {
+                GetTotalScore();
+                countdown = true;
+                StopAllCoroutines();
+            }
         }
         if(level1score > Level1Highscore)
         {
@@ -78,6 +85,8 @@ public class Score : MonoBehaviour
             Level3Highscore = level3score;
             HighscoreText.text = "Highscore: " + totalScore.ToString();
         }
+            
+
 
     }
 
@@ -99,7 +108,7 @@ public class Score : MonoBehaviour
         {
             level3score = totalScore;
         }
-        scoreText.text = "Score: "+ totalScore.ToString();
+        scoreText.text = "Score: " + totalScore.ToString();
         TimeLeftText.text = "Time left: " + timeleft.ToString();
         yield return new WaitForSeconds(1);
         countdown = false;
@@ -108,5 +117,7 @@ public class Score : MonoBehaviour
     void GetTotalScore()
     {
         totalScore = totalScore + timeleft;
+        scoreText.text = "Score: " + totalScore.ToString();
+        TimeLeftText.text = "Time left: " + timeleft.ToString();
     }
 }
