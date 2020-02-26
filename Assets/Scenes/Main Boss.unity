@@ -636,11 +636,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66487634c7d67d4380cd457024b5534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  xPosition: 0
   bossHealthBar: {fileID: 344242932}
   health: 50
   deathEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,
     type: 3}
+  startTimeBetweenShots: 0
+  BirdProjectile: {fileID: 0}
+  BirdProjectileLow: {fileID: 0}
 --- !u!1 &483190562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1249,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 35ccd8a79a42e18409e516831bb79eb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 69638142429ed8e49a6291959c0eccbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1272,7 +1275,7 @@ MonoBehaviour:
   rb: {fileID: 998322332}
   speed: 4
   animator: {fileID: 998322329}
-  health: 50
+  health: 150
   playerHealthBar: {fileID: 1364616553}
   enemy: {fileID: 455180022}
   deathEffect: {fileID: 32677694673685267, guid: 01a2ad521ece3ca408678254aeebe9b2,

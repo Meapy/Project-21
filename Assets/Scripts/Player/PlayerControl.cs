@@ -48,6 +48,13 @@ public class PlayerControl : MonoBehaviour
     {
         health -= damage;
         Debug.Log("Player Health is " + health);
+        animator.SetTrigger("isHurt");
+        StartCoroutine(TimeCountdown());
+        animator.SetTrigger("isIdle");
+    }
+    IEnumerator TimeCountdown()
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
