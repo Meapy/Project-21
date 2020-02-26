@@ -19,13 +19,14 @@ public class Score : MonoBehaviour
     public long level2score = 0;
     public long level3score = 0;
 
-    public static long Level1Highscore = 0;
-    public static long Level2Highscore = 0;
-    public static long Level3Highscore = 0;
+    public static long Level1Highscore = LoadGame.Level1Highscore;
+    public static long Level2Highscore = LoadGame.Level2Highscore;
+    public static long Level3Highscore = LoadGame.Level3Highscore;
 
     public static long BossKill;
 
     public bool countdown = false;
+    public static bool LevelDone = false;
 
     public Transform player;
     public TextMeshProUGUI scoreText;
@@ -41,14 +42,17 @@ public class Score : MonoBehaviour
         if (sceneName == "Level 1")
         {
             level = 1;
+            HighscoreText.text = Level1Highscore.ToString();
         }
         else if (sceneName == "Level 2")
         {
             level = 2;
+            HighscoreText.text = Level2Highscore.ToString();
         }
         else if (sceneName == "Level 3")
         {
             level = 3;
+            HighscoreText.text = Level3Highscore.ToString();
         }
     }
 
@@ -59,6 +63,12 @@ public class Score : MonoBehaviour
         {
             countdown = true;
             StartCoroutine(TimeCountdown());
+            if (LevelDone)
+            {
+                GetTotalScore();
+                countdown = true;
+                StopAllCoroutines();
+            }
         }
         if(level1score > Level1Highscore)
         {
@@ -75,7 +85,9 @@ public class Score : MonoBehaviour
             Level3Highscore = level3score;
             HighscoreText.text = "Highscore: " + totalScore.ToString();
         }
-       
+            
+
+
     }
 
 
@@ -96,7 +108,7 @@ public class Score : MonoBehaviour
         {
             level3score = totalScore;
         }
-        scoreText.text = "Score: "+ totalScore.ToString();
+        scoreText.text = "Score: " + totalScore.ToString();
         TimeLeftText.text = "Time left: " + timeleft.ToString();
         yield return new WaitForSeconds(1);
         countdown = false;
@@ -105,5 +117,7 @@ public class Score : MonoBehaviour
     void GetTotalScore()
     {
         totalScore = totalScore + timeleft;
+        scoreText.text = "Score: " + totalScore.ToString();
+        TimeLeftText.text = "Time left: " + timeleft.ToString();
     }
 }
