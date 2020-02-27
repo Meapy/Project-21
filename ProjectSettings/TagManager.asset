@@ -9,10 +9,7 @@ TagManager:
   - Wall
   - Swamp
   - MiniBoss
-  - TargetLeft
-  - TargetRight
-  - TargetDown
-  - Targetup
+  - Jumpy
   layers:
   - Default
   - TransparentFX

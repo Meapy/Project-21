@@ -39,6 +39,11 @@ public class Projectile : MonoBehaviour
                 Debug.Log("MiniBoss Must Take Damage!");
                 hitInfo.collider.GetComponent<BirdBehaviour>().TakeDamage(damage);
             }
+            if (hitInfo.collider.CompareTag("Jumpy"))
+            {
+                Debug.Log("Jumpy Must Take Damage!");
+                hitInfo.collider.GetComponent<BugMovement>().TakeDamage(damage);
+            }
             DestroyProjectile();
         }
 
