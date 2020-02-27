@@ -10,6 +10,13 @@ public class TreeMovement : MonoBehaviour
     public Slider bossHealthBar;
     public float health;
 
+    public float startTimeBetweenShots;
+    private float timeBetweenShots;
+    public GameObject BossProjectileLRUD;
+
+    //Targets
+    private Transform targetLeft;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,15 +31,24 @@ public class TreeMovement : MonoBehaviour
         {
 
             bossHealthBar.value = health;
+
+            if (timeBetweenShots <= 0)
+            {
+                Instantiate(BossProjectileLRUD, transform.position, Quaternion.identity);
+                timeBetweenShots = startTimeBetweenShots;
+            }
+            else
+            {
+                timeBetweenShots -= Time.deltaTime;
+            }
+
         }
 
         if (health <= 0)
         {
             //Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
-
         }
-
     }
 
     public void TakeDamage(int damage)

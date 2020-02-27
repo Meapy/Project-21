@@ -7,9 +7,6 @@ using TMPro;
 
 public class LoadGame : MonoBehaviour
 {
-    public TextMeshProUGUI Level1HighscoreDisplay;
-    public TextMeshProUGUI Level2HighscoreDisplay;
-    public TextMeshProUGUI Level3HighscoreDisplay;
 
     public static long Level1Highscore;
     public static long Level2Highscore;
@@ -24,9 +21,9 @@ public class LoadGame : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
 
-        Level1Highscore = data.Level1Highscore;
-        Level2Highscore = data.Level2Highscore;
-        Level3Highscore = data.Level3Highscore;
+        Score.Level1Highscore = data.Level1Highscore;
+        Score.Level2Highscore = data.Level2Highscore;
+        Score.Level3Highscore = data.Level3Highscore;
 
     }
     void Update()

@@ -12,9 +12,9 @@ public class PlayerData
 
     public PlayerData(LoadGame player)
     {
-        Level1Highscore = LoadGame.Level1Highscore;
-        Level2Highscore = LoadGame.Level2Highscore;
-        Level3Highscore = LoadGame.Level3Highscore;
+        Level1Highscore = Score.Level1Highscore;
+        Level2Highscore = Score.Level2Highscore;
+        Level3Highscore = Score.Level3Highscore;
     }
 
 }

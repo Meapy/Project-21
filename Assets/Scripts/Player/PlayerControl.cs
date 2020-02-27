@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour
     public float health;
     public Slider playerHealthBar;
     public Transform enemy;
+    public Transform swamp;
     public GameObject deathEffect;
     public GameObject hitEffect;
 
@@ -21,6 +22,7 @@ public class PlayerControl : MonoBehaviour
      //   anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+        swamp = GameObject.FindGameObjectWithTag("Swamp").transform;
     }
     
     void Update()
@@ -48,6 +50,14 @@ public class PlayerControl : MonoBehaviour
     {
         health -= damage;
         Debug.Log("Player Health is " + health);
+        animator.SetTrigger("isHurt");
+        StartCoroutine(TimeCountdown());
+        animator.SetTrigger("isIdle");
+        animator.SetTrigger("isMove");
+    }
+    IEnumerator TimeCountdown()
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
