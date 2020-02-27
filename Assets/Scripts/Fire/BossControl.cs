@@ -25,10 +25,11 @@ public class BossControl : MonoBehaviour
 
     void Update()
     {
+        bossHealthBar.value = health;
+
+
         if (player != null) // once player dies we good
         {
-            bossHealthBar.value = health;
-
             if (Vector2.Distance(transform.position, player.position) > stoppingDistance && Vector2.Distance(transform.position, player.position) < startDistance)
             { // Moves towards player if the boss is too far away
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
@@ -52,13 +53,12 @@ public class BossControl : MonoBehaviour
             {
                 timeBetweenShots -= Time.deltaTime; // Counts down timer before boss can shoot again
             }
+        }
+        if (health <= 0)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
 
-            if (health <= 0)
-            {
-                Instantiate(deathEffect, transform.position, Quaternion.identity);
-                Destroy(gameObject);
-               
-            }
         }
     }
 
