@@ -10284,6 +10284,51 @@ RectTransform:
   m_AnchoredPosition: {x: 7925, y: -211309}
   m_SizeDelta: {x: 217, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &671628578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 671628580}
+  - component: {fileID: 671628579}
+  m_Layer: 0
+  m_Name: BulletPoolBug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &671628579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671628578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09493d2028ca19e46a362767af9825cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledBulletBug: {fileID: 6899305024645786193, guid: 17827049076cddd4d8788c28bdc4a29b,
+    type: 3}
+--- !u!4 &671628580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671628578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &788519142
 GameObject:
   m_ObjectHideFlags: 0
@@ -10604,6 +10649,7 @@ GameObject:
   - component: {fileID: 1091723953}
   - component: {fileID: 1091723952}
   - component: {fileID: 1091723951}
+  - component: {fileID: 1091723956}
   m_Layer: 9
   m_Name: Roach
   m_TagString: Jumpy
@@ -10627,8 +10673,8 @@ MonoBehaviour:
   bugHealthBar: {fileID: 607180814}
   health: 50
   jumpSpeed: 8
-  stoppingDistance: 3
-  startDistance: 7
+  stoppingDistance: 1.5
+  startDistance: 8
   jumpTime: 3
 --- !u!212 &1091723952
 SpriteRenderer:
@@ -10743,6 +10789,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1091723956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091723950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e408411151e9d547a1876548454f689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletsAmountBug: 4
+  startAngleBug: 0
+  endAngleBug: 360
 --- !u!1 &1132657093
 GameObject:
   m_ObjectHideFlags: 0

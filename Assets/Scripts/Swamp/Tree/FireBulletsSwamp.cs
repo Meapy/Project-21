@@ -37,8 +37,8 @@ public class FireBulletsSwamp : MonoBehaviour
             if (stage2counter == true)
             {
                 CancelInvoke("Fire");
-                InvokeRepeating("Fire", 0.1f, 1.8f);
-                InvokeRepeating("Fire2", 0.1f, 1.8f);
+                InvokeRepeating("Fire", 2f, 1.8f);
+                InvokeRepeating("Fire2", 2f, 1.8f);
                 stage2counter = false;
             }
         }
