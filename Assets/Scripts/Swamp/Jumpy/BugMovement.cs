@@ -3,19 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TreeMovement : MonoBehaviour
+public class BugMovement : MonoBehaviour
 {
     public Transform player;
 
     public Slider bossHealthBar;
     public float health;
-
-    public float startTimeBetweenShots;
-    private float timeBetweenShots;
-    public GameObject BossProjectileLRUD;
-
-    //Targets
-    private Transform targetLeft;
 
 
     // Start is called before the first frame update
@@ -27,27 +20,18 @@ public class TreeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bossHealthBar.value = health;
+
         if (player != null)
         {
-
-            bossHealthBar.value = health;
-
-            if (timeBetweenShots <= 0)
-            {
-                Instantiate(BossProjectileLRUD, transform.position, Quaternion.identity);
-                timeBetweenShots = startTimeBetweenShots;
-            }
-            else
-            {
-                timeBetweenShots -= Time.deltaTime;
-            }
 
         }
 
         if (health <= 0)
         {
-            //Instantiate(deathEffect, transform.position, Quaternion.identity);
+          //  Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+
         }
     }
 
@@ -56,4 +40,5 @@ public class TreeMovement : MonoBehaviour
         health -= damage;
         Debug.Log("Boss Health is " + health);
     }
+
 }

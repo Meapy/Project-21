@@ -34,8 +34,6 @@ public class PlayerControl : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.magnitude);
         
-
-        
         playerHealthBar.value = health;
 
         if (health <= 0)

@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class BossProjectileLRUD : MonoBehaviour
+public class TreeProjectile : MonoBehaviour
 {
     public float speed;
     public float lifetime;
@@ -17,22 +16,18 @@ public class BossProjectileLRUD : MonoBehaviour
     public int damage;
     public GameObject destroyEffect;
 
-    //Targets
-    private Transform targetLeft;
-    private Vector2 targetLeft2;
-
-
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        targetLeft = GameObject.FindGameObjectWithTag("TargetLeft").transform;
-        targetLeft2 = new Vector2(targetLeft.position.x, targetLeft.position.y);
+        target = new Vector2(player.position.x, player.position.y);
+
         Invoke("DestroyProjectile", lifetime);
     }
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetLeft2, speed * Time.deltaTime); // Position to move projectile too
+
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime); // Position to move projectile too
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid); // Creates raycast for the projectile 
 
         if (hitInfo.collider != null)
@@ -40,7 +35,7 @@ public class BossProjectileLRUD : MonoBehaviour
             if (hitInfo.collider.CompareTag("Player"))
             {
                 Debug.Log("Player Must Take Damage!");
-                hitInfo.collider.GetComponent<TreeMovement>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<PlayerControl>().TakeDamage(damage);
             }
             DestroyProjectile();
         }
