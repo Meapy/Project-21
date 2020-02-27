@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -40,8 +41,9 @@ public class PlayerControl : MonoBehaviour
 
         if (health <= 0)
         {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
+            //Instantiate(deathEffect, transform.position, Quaternion.identity);
+            //Destroy(gameObject);
         }
         
     }
