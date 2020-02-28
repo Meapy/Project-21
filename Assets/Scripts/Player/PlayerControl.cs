@@ -47,7 +47,18 @@ public class PlayerControl : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(LightDrop, transform.position, Quaternion.identity);
+            if(Score.totalScore <= 0)
+            {
+                Debug.Log("you need more score to place a light");
+            }
+            else
+            {
+                Instantiate(LightDrop, transform.position, Quaternion.identity);
+                Score.totalScore -= 10;
+                Debug.Log("Light has been placed, 10 score has been taken away");
+
+            }
+            
         }
     }
 
