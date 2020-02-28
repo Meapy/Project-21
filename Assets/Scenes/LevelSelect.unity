@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1120,7 +1120,7 @@ GameObject:
   m_Layer: 0
   m_Name: LoadGame
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1136,9 +1136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487d413f03112924ea1fd614fbb126d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level1HighscoreDisplay: {fileID: 0}
-  Level2HighscoreDisplay: {fileID: 0}
-  Level3HighscoreDisplay: {fileID: 0}
 --- !u!4 &1389357587
 Transform:
   m_ObjectHideFlags: 0

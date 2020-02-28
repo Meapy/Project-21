@@ -10,7 +10,7 @@ public class Score : MonoBehaviour
 
     public long totalScore;
     public long maxtime = 360;
-    public long BossScore = 500;
+    public long BossScore;
     public long timeleft;
     public long startTime;
     public long level;
@@ -38,21 +38,26 @@ public class Score : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
+        BossScore = 0;
+        level1score = 0;
+        level2score = 0;
+        level3score = 0;
         startTime = maxtime;
+        LevelDone = false;
         if (sceneName == "Level 1")
         {
             level = 1;
-            HighscoreText.text = Level1Highscore.ToString();
+            HighscoreText.text = "Highscore: " + Level1Highscore.ToString();
         }
         else if (sceneName == "Level 2")
         {
             level = 2;
-            HighscoreText.text = Level2Highscore.ToString();
+            HighscoreText.text = "Highscore: " + Level2Highscore.ToString();
         }
         else if (sceneName == "Level 3")
         {
             level = 3;
-            HighscoreText.text = Level3Highscore.ToString();
+            HighscoreText.text = "Highscore: " + Level3Highscore.ToString();
         }
     }
 
@@ -109,7 +114,7 @@ public class Score : MonoBehaviour
             level3score = totalScore;
         }
         scoreText.text = "Score: " + totalScore.ToString();
-        TimeLeftText.text = "Time left: " + timeleft.ToString();
+        TimeLeftText.text = "Time Bonus: " + timeleft.ToString();
         yield return new WaitForSeconds(1);
         countdown = false;
     }
@@ -118,6 +123,6 @@ public class Score : MonoBehaviour
     {
         totalScore = totalScore + timeleft;
         scoreText.text = "Score: " + totalScore.ToString();
-        TimeLeftText.text = "Time left: " + timeleft.ToString();
+        TimeLeftText.text = "Time Bonus: " + timeleft.ToString();
     }
 }
