@@ -9,6 +9,7 @@ public class Score : MonoBehaviour
 {
 
     public static long totalScore;
+    public static long endScore;
     public long maxtime = 360;
     public long BossScore;
     public static int lightDrop;
@@ -20,9 +21,9 @@ public class Score : MonoBehaviour
     public long level2score = 0;
     public long level3score = 0;
 
-    public static long Level1Highscore;
-    public static long Level2Highscore;
-    public static long Level3Highscore;
+    public static long Level1Highscore = 0;
+    public static long Level2Highscore = 0;
+    public static long Level3Highscore = 0;
 
     public static long BossKill;
 
@@ -31,6 +32,7 @@ public class Score : MonoBehaviour
 
     public Transform player;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI endText;
     public TextMeshProUGUI HighscoreText;
     public TextMeshProUGUI TimeLeftText;
 
@@ -49,6 +51,7 @@ public class Score : MonoBehaviour
         Level1Highscore = LoadGame.Level1Highscore;
         Level2Highscore = LoadGame.Level2Highscore;
         Level3Highscore = LoadGame.Level3Highscore;
+        endText.text = "score: " + endScore.ToString();
         if (sceneName == "Level 1")
         {
             level = 1;
@@ -106,6 +109,7 @@ public class Score : MonoBehaviour
         GetLevel();
         scoreText.text = "Score: " + totalScore.ToString();
         TimeLeftText.text = "Time Bonus: " + timeleft.ToString();
+        endScore = totalScore;
         yield return new WaitForSeconds(1);
         countdown = false;
     }
@@ -114,6 +118,7 @@ public class Score : MonoBehaviour
     {
     
         totalScore += timeleft;
+        
         GetLevel();
         scoreText.text = "Score: " + totalScore.ToString();
         TimeLeftText.text = "Time Bonus: " + timeleft.ToString();
