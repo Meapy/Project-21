@@ -44,6 +44,7 @@ public class Score : MonoBehaviour
         level2score = 0;
         level3score = 0;
         totalScore = 0;
+        lightDrop = 0;
         startTime = maxtime;
         BossKill = 0;
         LevelDone = false;
