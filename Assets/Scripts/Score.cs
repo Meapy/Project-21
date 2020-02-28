@@ -19,9 +19,9 @@ public class Score : MonoBehaviour
     public long level2score = 0;
     public long level3score = 0;
 
-    public static long Level1Highscore = LoadGame.Level1Highscore;
-    public static long Level2Highscore = LoadGame.Level2Highscore;
-    public static long Level3Highscore = LoadGame.Level3Highscore;
+    public static long Level1Highscore;
+    public static long Level2Highscore;
+    public static long Level3Highscore;
 
     public static long BossKill;
 
@@ -44,6 +44,9 @@ public class Score : MonoBehaviour
         level3score = 0;
         startTime = maxtime;
         LevelDone = false;
+        Level1Highscore = LoadGame.Level1Highscore;
+        Level2Highscore = LoadGame.Level2Highscore;
+        Level3Highscore = LoadGame.Level3Highscore;
         if (sceneName == "Level 1")
         {
             level = 1;
