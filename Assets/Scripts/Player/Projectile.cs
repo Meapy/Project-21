@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public float speed;
     public float lifetime;
     public float distance;
+    public AudioSource ShootingEffect;
     public LayerMask whatIsSolid;
 
     public int damage;
@@ -14,8 +15,10 @@ public class Projectile : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    { 
-      Invoke("DestroyProjectile", lifetime);
+    {
+        ShootingEffect = GetComponent<AudioSource>();
+
+        Invoke("DestroyProjectile", lifetime);
     }
 
     // Update is called once per frame
@@ -23,7 +26,12 @@ public class Projectile : MonoBehaviour
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
         if (hitInfo.collider != null)
-        {   
+        {
+            ShootingEffect.Play();
+            if (Input.GetMouseButtonUp(0) == true)
+            {
+                ShootingEffect.Stop();
+            }
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 Debug.Log("Enemy Must Take Damage!");
