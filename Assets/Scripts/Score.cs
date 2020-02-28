@@ -8,7 +8,7 @@ using TMPro;
 public class Score : MonoBehaviour
 {
 
-    public long totalScore;
+    public static long totalScore;
     public long maxtime = 360;
     public long BossScore;
     public long timeleft;
