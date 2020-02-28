@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerControl : MonoBehaviour
     public Transform swamp;
     public GameObject deathEffect;
     public GameObject hitEffect;
+    public TextMeshProUGUI scoreText;
 
     public GameObject LightDrop;
     public AudioSource DeadSoundEffect;
