@@ -44,6 +44,10 @@ public class MainMenuButton : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");
     }
+    public void GoToLevelComplete()
+    {
+        SceneManager.LoadScene("LevelComplete");
+    }
 
     public void QuitGame()
     {

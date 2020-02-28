@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -310,6 +310,7 @@ GameObject:
   - component: {fileID: 129261255}
   - component: {fileID: 129261257}
   - component: {fileID: 129261256}
+  - component: {fileID: 129261258}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -372,6 +373,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129261254}
   m_CullTransparentMesh: 0
+--- !u!114 &129261258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129261254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e25eeb2b56cb114c829b371e0e048c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1397820669}
 --- !u!1 &394147851
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +554,7 @@ GameObject:
   - component: {fileID: 846795356}
   - component: {fileID: 846795355}
   m_Layer: 5
-  m_Name: Main Menu
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

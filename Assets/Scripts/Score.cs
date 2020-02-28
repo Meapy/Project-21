@@ -115,7 +115,8 @@ public class Score : MonoBehaviour
     void GetTotalScore()
     {
     
-        totalScore += timeleft;        
+        totalScore += timeleft;
+        LevelComplete.score = totalScore;
         GetLevel();
         scoreText.text = "Score: " + totalScore.ToString();
         TimeLeftText.text = "Time Bonus: " + timeleft.ToString();
