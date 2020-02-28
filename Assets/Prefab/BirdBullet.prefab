@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5058358531821864823}
   - component: {fileID: 5361392775926959846}
   - component: {fileID: -2742038090293237770}
+  - component: {fileID: 2081061265778969369}
   m_Layer: 0
   m_Name: BirdBullet
   m_TagString: Untagged
@@ -96,3 +97,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 10
   bulletSpeed2: 20
+--- !u!58 &2081061265778969369
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072969614005668450}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0014380217, y: 0.0020133497}
+  serializedVersion: 2
+  m_Radius: 0.04738896

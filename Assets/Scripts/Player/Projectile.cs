@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShootingEffect = GetComponent<AudioSource>();
+        //ShootingEffect = GetComponent<AudioSource>();
 
         Invoke("DestroyProjectile", lifetime);
     }
@@ -27,11 +27,11 @@ public class Projectile : MonoBehaviour
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
         if (hitInfo.collider != null)
         {
-            ShootingEffect.Play();
-            if (Input.GetMouseButtonUp(0) == true)
-            {
-                ShootingEffect.Stop();
-            }
+            //ShootingEffect.Play();
+            //if (Input.GetMouseButtonUp(0) == true)
+            //{
+            //    ShootingEffect.Stop();
+            //}
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 Debug.Log("Enemy Must Take Damage!");

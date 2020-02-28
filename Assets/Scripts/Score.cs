@@ -11,9 +11,10 @@ public class Score : MonoBehaviour
     public static long totalScore;
     public long maxtime = 360;
     public long BossScore;
+    public static int lightDrop;
     public long timeleft;
     public long startTime;
-    public long level;
+    public static long level;
 
     public long level1score = 0;
     public long level2score = 0;
@@ -101,7 +102,7 @@ public class Score : MonoBehaviour
     {
         startTime--;
         timeleft = startTime;
-        totalScore = BossKill;
+        totalScore = BossKill + lightDrop;
         GetLevel();
         scoreText.text = "Score: " + totalScore.ToString();
         TimeLeftText.text = "Time Bonus: " + timeleft.ToString();

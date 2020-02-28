@@ -14,7 +14,13 @@ public class Sound : MonoBehaviour
         get { return instance; }
     }
     */
-
+    private void Update()
+    {
+        if (Score.level == 2)
+        {
+            Destroy(gameObject);
+        }
+    }
     void Awake()
     {
         if (instance == null)
@@ -23,10 +29,7 @@ public class Sound : MonoBehaviour
             DontDestroyOnLoad(instance);
         }
 
-        if (Application.loadedLevel == 2)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 }
 

@@ -61,7 +61,7 @@ public class PlayerControl : MonoBehaviour
             else
             {
                 Instantiate(LightDrop, transform.position, Quaternion.identity);
-                Score.totalScore -= 10;
+                Score.lightDrop -= 10;
                 Debug.Log("Light has been placed, 10 score has been taken away");
 
             }
