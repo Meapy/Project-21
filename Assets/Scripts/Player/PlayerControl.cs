@@ -18,6 +18,8 @@ public class PlayerControl : MonoBehaviour
     public GameObject deathEffect;
     public GameObject hitEffect;
 
+    public GameObject LightDrop;
+
     void Start()
     {
      //   anim = GetComponent<Animator>();
@@ -43,7 +45,10 @@ public class PlayerControl : MonoBehaviour
             //Instantiate(deathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);
         }
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(LightDrop, transform.position, Quaternion.identity);
+        }
     }
 
     public void TakeDamage(int damage)
