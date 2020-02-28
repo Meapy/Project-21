@@ -19,6 +19,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject hitEffect;
 
     public GameObject LightDrop;
+    public AudioSource DeadSoundEffect;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
         swamp = GameObject.FindGameObjectWithTag("Swamp").transform;
+        DeadSoundEffect = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -41,7 +43,12 @@ public class PlayerControl : MonoBehaviour
 
         if (health <= 0)
         {
+            DeadSoundEffect.Play();
+            StartCoroutine(TimeCountdown());
             SceneManager.LoadScene("GameOver");
+            
+
+
             //Instantiate(deathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);
         }
@@ -73,7 +80,7 @@ public class PlayerControl : MonoBehaviour
     }
     IEnumerator TimeCountdown()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
