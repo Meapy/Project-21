@@ -10,6 +10,7 @@ TagManager:
   - Swamp
   - MiniBoss
   - Jumpy
+  - Desert
   layers:
   - Default
   - TransparentFX

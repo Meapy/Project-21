@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BirdProjectile : MonoBehaviour
+public class SphereProjectile : MonoBehaviour
 {
     public float speed;
     public float lifetime;
@@ -21,7 +21,7 @@ public class BirdProjectile : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector2(player.position.x, player.position.y);
-        
+
         Invoke("DestroyProjectile", lifetime);
     }
 
@@ -35,10 +35,10 @@ public class BirdProjectile : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Player"))
             {
-                 Debug.Log("Player Must Take Damage!");
-                 hitInfo.collider.GetComponent<PlayerControl>().TakeDamage(damage);
+                Debug.Log("Player Must Take Damage!");
+                hitInfo.collider.GetComponent<PlayerControl>().TakeDamage(damage);
             }
-            DestroyProjectile();      
+            DestroyProjectile();
         }
     }
 

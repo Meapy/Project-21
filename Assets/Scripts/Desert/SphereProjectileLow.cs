@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BirdProjectile : MonoBehaviour
+public class SphereProjectileLow : MonoBehaviour
 {
     public float speed;
     public float lifetime;
     public float distance;
 
     private Transform player;
-    private Transform playerLookAt;
 
     private Vector2 target;
     public LayerMask whatIsSolid;
@@ -21,13 +20,15 @@ public class BirdProjectile : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector2(player.position.x, player.position.y);
-        
+
         Invoke("DestroyProjectile", lifetime);
     }
 
     void Update()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        target = new Vector2(player.position.x, player.position.y);
+        ;
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime); // Position to move projectile too
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid); // Creates raycast for the projectile 
 
@@ -35,10 +36,10 @@ public class BirdProjectile : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Player"))
             {
-                 Debug.Log("Player Must Take Damage!");
-                 hitInfo.collider.GetComponent<PlayerControl>().TakeDamage(damage);
+                Debug.Log("Player Must Take Damage!");
+                hitInfo.collider.GetComponent<PlayerControl>().TakeDamage(damage);
             }
-            DestroyProjectile();      
+            DestroyProjectile();
         }
     }
 
