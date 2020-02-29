@@ -30,6 +30,7 @@ public class PlayerControl : MonoBehaviour
         enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
         swamp = GameObject.FindGameObjectWithTag("Swamp").transform;
         DeadSoundEffect = GetComponent<AudioSource>();
+
     }
     
     void Update()
@@ -94,10 +95,12 @@ public class PlayerControl : MonoBehaviour
         TakeDamage(10);
     }
 
-    void FixedUpdate()
+void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
+
+   
 }            /*
         if (movement.x > 0)
         {
