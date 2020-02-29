@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DMiniBullet : MonoBehaviour
+public class DMiniBullets : MonoBehaviour
 {
     private Vector2 moveDirection;
     private Vector2 moveDirection2;

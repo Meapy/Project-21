@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DminiBulletPool : MonoBehaviour
+public class DMiniBulletPool : MonoBehaviour
 {
-    public static DminiBulletPool bulletPoolInstanseDM;
+    public static DMiniBulletPool bulletPoolInstanseDM;
 
     [SerializeField]
     private GameObject pooledBulletDM;

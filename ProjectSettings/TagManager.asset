@@ -11,6 +11,7 @@ TagManager:
   - MiniBoss
   - Jumpy
   - Desert
+  - DMini
   layers:
   - Default
   - TransparentFX
