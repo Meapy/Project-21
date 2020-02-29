@@ -15,7 +15,7 @@ public class TreeMovement : MonoBehaviour
     private float timeBetweenShots1;
     private float timeBetweenShots2;
     public GameObject TreeProjectile;
-    public GameObject TreeProjectileLow;
+    public GameObject EndLevel;
 
 
     // Start is called before the first frame update
@@ -60,6 +60,7 @@ public class TreeMovement : MonoBehaviour
             //Instantiate(deathEffect, transform.position, Quaternion.identity);
             Score.BossKill = Score.BossKill + 500;
             Destroy(gameObject);
+            EndLevel.SetActive(true);
 
         }
     }
