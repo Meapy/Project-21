@@ -10583,9 +10583,9 @@ MonoBehaviour:
   bossHealthBar: {fileID: 1633235575}
   health: 100
   startTimeBetweenShots: 2
-  SphereProjectile: {fileID: 3629576387561639284, guid: c3e6c43f9b93fcc4a9b0fb420874f383,
+  SphereProjectile: {fileID: 2626203479674549538, guid: 8fd2af7b5082d064799f086a565f48e8,
     type: 3}
-  SphereProjectileLow: {fileID: 1054518401045319671, guid: 6250525dd94b3f24f8332e1f73226910,
+  SphereProjectileLow: {fileID: 7959200605141488062, guid: 9f1e968514c431d43a701c50ab23519f,
     type: 3}
 --- !u!114 &891224781
 MonoBehaviour:
@@ -11306,7 +11306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384328563}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.62, y: 0.04, z: 0}
+  m_LocalPosition: {x: -31.21, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 598579357}
