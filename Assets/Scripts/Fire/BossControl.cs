@@ -27,7 +27,6 @@ public class BossControl : MonoBehaviour
     {
         bossHealthBar.value = health;
 
-
         if (player != null) // once player dies we good
         {
             if (Vector2.Distance(transform.position, player.position) > stoppingDistance && Vector2.Distance(transform.position, player.position) < startDistance)
