@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Sound : MonoBehaviour
 {
@@ -23,8 +22,6 @@ public class Sound : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
     }
     void Awake()
     {
