@@ -6,7 +6,11 @@ public class Sound : MonoBehaviour
 {
     private static Sound instance;
 
-  public static Sound Instance 
+    private void Start()
+    {
+        Score.level = 0;
+    }
+    public static Sound Instance 
     
 
     {
@@ -15,7 +19,7 @@ public class Sound : MonoBehaviour
 
     private void Update()
     {
-        for(int i = 0; i < 3; i++)
+        for(int i = 1; i <= 3; i++)
         {
             if (Score.level == i)
             {
