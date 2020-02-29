@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -525,7 +525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &325708727
 Transform:
   m_ObjectHideFlags: 0
@@ -8881,7 +8881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531350652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.18, y: -23.2, z: -2.9734507}
+  m_LocalPosition: {x: -23.7, y: -32.05, z: -2.9734507}
   m_LocalScale: {x: 4.724045, y: 3.685947, z: 1}
   m_Children:
   - {fileID: 1993874089}
@@ -12938,7 +12938,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c8055a9eae75e454ca60235cc865af22, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13317,7 +13317,8 @@ MonoBehaviour:
   startTimeBetweenShots: 2
   TreeProjectile: {fileID: 3930907936076148742, guid: 9eff4a4ce5e54f0428dbaae60c9dafa4,
     type: 3}
-  TreeProjectileLow: {fileID: 0}
+  TreeProjectileLow: {fileID: 3058939469109158846, guid: 5cfc6cac36035f34088d66e0f824d006,
+    type: 3}
 --- !u!212 &1927197800
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13661,7 +13662,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 7364682651488144517, guid: 300c1c7444ac3f244a60c249e3b968af,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
