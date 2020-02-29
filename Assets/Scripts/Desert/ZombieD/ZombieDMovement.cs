@@ -56,6 +56,7 @@ public class ZombieDMovement : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            Score.BossKill = Score.BossKill + 100;
 
         }
     }
