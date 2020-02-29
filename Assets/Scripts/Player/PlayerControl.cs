@@ -56,11 +56,8 @@ public class PlayerControl : MonoBehaviour
         }
         if (health <= 0)
         {
-            DeadSoundEffect.Play();
             StartCoroutine(TimeCountdown());
             SceneManager.LoadScene("GameOver");
-            
-
 
             //Instantiate(deathEffect, transform.position, Quaternion.identity);
             //Destroy(gameObject);
