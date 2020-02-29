@@ -62,6 +62,11 @@ public class Projectile : MonoBehaviour
                 Debug.Log("DMini Must Take Damage");
                 hitInfo.collider.GetComponent<DMiniMovement>().TakeDamage(damage);
             }
+            if (hitInfo.collider.CompareTag("ZombieD"))
+            {
+                Debug.Log("Zombie Must Take Damage");
+                hitInfo.collider.GetComponent<ZombieDMovement>().TakeDamage(damage);
+            }
             DestroyProjectile();
         }
 
