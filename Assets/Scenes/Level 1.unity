@@ -203,9 +203,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 50
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8754,9 +8754,10 @@ MonoBehaviour:
     type: 3}
   hitEffect: {fileID: 6130689774090929180, guid: 5a0e66cdc3323244cb34d75dde18c373,
     type: 3}
-  scoreText: {fileID: 0}
+  healthText: {fileID: 1922831117}
   LightDrop: {fileID: 189226624}
   DeadSoundEffect: {fileID: 0}
+  countdown: 0
 --- !u!95 &531350655
 Animator:
   serializedVersion: 3
