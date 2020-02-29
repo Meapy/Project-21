@@ -24,7 +24,7 @@ public class MainMenuButton : MonoBehaviour
     }
     public void GoToLevelThree()
     {
-        SceneManager.LoadScene("RLvl2");
+        SceneManager.LoadScene("Arena");
     }public void GoToLevelFour()
     {
         SceneManager.LoadScene("KLevel2");
@@ -56,10 +56,12 @@ public class MainMenuButton : MonoBehaviour
         if (Score.level == 1)
         {
             SceneManager.LoadScene("Level 1");
-        }if (Score.level == 2)
+        }
+        if (Score.level == 2)
         {
             SceneManager.LoadScene("Level 2");
-        }if (Score.level == 3)
+        }
+        if (Score.level == 3)
         {
             SceneManager.LoadScene("Level 3");
         }

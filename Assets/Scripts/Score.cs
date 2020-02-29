@@ -61,7 +61,7 @@ public class Score : MonoBehaviour
             level = 2;
             HighscoreText.text = "Highscore: " + Level2Highscore.ToString();
         }
-        else if (sceneName == "Level 3")
+        else if (sceneName == "Arena")
         {
             level = 3;
             HighscoreText.text = "Highscore: " + Level3Highscore.ToString();
