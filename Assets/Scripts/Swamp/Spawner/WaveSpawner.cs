@@ -6,12 +6,15 @@ public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { Spawning, Waiting, Counting };
 
+    private Transform player;
+
     public Wave[] waves;
     //public Transform[] spawnPoints;
     private int nextWave = 0;
     public float timeBetweenWaves = 5f;
     private float waveCountdown;
     private float searchCountdown = 1f;
+    private float workDistance = 13f;
 
     private SpawnState state = SpawnState.Counting;
 
@@ -19,38 +22,41 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         waveCountdown = timeBetweenWaves;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (state == SpawnState.Waiting)
+        if (Vector2.Distance(transform.position, player.position) < workDistance)
         {
-            if (!EnemyIsAlive())
+            if (state == SpawnState.Waiting)
             {
-                Debug.Log("Wave Completed");
-                WaveCompleted();
-                return;
+                if (!EnemyIsAlive())
+                {
+                    Debug.Log("Wave Completed");
+                    WaveCompleted();
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+
+
+            if (waveCountdown <= 0)
+            {
+                if (state != SpawnState.Spawning)
+                {
+                    StartCoroutine(SpawnWave(waves[nextWave]));
+                }
             }
             else
             {
-                return;
+                waveCountdown -= Time.deltaTime;
             }
-        }
-        
-
-
-        if (waveCountdown <= 0)
-        {
-            if (state != SpawnState.Spawning)
-            {
-                StartCoroutine(SpawnWave(waves[nextWave]));
-            }
-        }
-        else
-        {
-            waveCountdown -= Time.deltaTime;
         }
     }
 
