@@ -9,6 +9,7 @@ public class BirdProjectile : MonoBehaviour
     public float distance;
 
     private Transform player;
+    private Transform playerLookAt;
 
     private Vector2 target;
     public LayerMask whatIsSolid;
@@ -20,6 +21,7 @@ public class BirdProjectile : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector2(player.position.x, player.position.y);
+        
 
         Invoke("DestroyProjectile", lifetime);
     }

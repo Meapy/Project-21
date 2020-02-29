@@ -28,7 +28,7 @@ public class BirdProjectileLow : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector2(player.position.x, player.position.y);
-
+; 
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime); // Position to move projectile too
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid); // Creates raycast for the projectile 
 

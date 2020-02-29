@@ -10675,7 +10675,7 @@ MonoBehaviour:
   health: 50
   jumpSpeed: 8
   stoppingDistance: 1.5
-  startDistance: 8
+  startDistance: 10
   jumpTime: 3
 --- !u!212 &1091723952
 SpriteRenderer:
