@@ -12,6 +12,7 @@ TagManager:
   - Jumpy
   - Desert
   - DMini
+  - ZombieD
   layers:
   - Default
   - TransparentFX

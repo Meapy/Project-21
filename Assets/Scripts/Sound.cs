@@ -6,19 +6,25 @@ public class Sound : MonoBehaviour
 {
     private static Sound instance;
 
-    /*
+    private void Start()
+    {
+        Score.level = 0;
+    }
     public static Sound Instance 
     
 
     {
         get { return instance; }
     }
-    */
+
     private void Update()
     {
-        if (Score.level == 2)
+        for(int i = 1; i <= 3; i++)
         {
-            Destroy(gameObject);
+            if (Score.level == i)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     void Awake()
