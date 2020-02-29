@@ -154,7 +154,5 @@ public class BirdBehaviour : MonoBehaviour
             {
                 timeBetweenShots2 -= Time.deltaTime; // Counts down timer before boss can shoot again
             }
-    }
-
-    private float workDistance = 13f;
+        }
 }
