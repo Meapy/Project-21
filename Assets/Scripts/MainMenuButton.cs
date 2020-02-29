@@ -24,7 +24,10 @@ public class MainMenuButton : MonoBehaviour
     }
     public void GoToLevelThree()
     {
-        SceneManager.LoadScene("Level 3");
+        SceneManager.LoadScene("RLvl2");
+    }public void GoToLevelFour()
+    {
+        SceneManager.LoadScene("KLevel2");
     }
 
     public void GoToCharacterSelect()

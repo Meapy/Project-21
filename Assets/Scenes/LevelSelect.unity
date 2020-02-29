@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -899,7 +899,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1065696897}
-        m_MethodName: GoToExit
+        m_MethodName: GoToLevelFour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1712,6 +1712,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a24d6255e8b664d9e4464429648001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
+  previoussceneName: 
 --- !u!4 &1788673858
 Transform:
   m_ObjectHideFlags: 0
@@ -1807,7 +1809,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1847645690}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1065696897}
+        m_MethodName: GoToLevelThree
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1847645690
 MonoBehaviour:
   m_ObjectHideFlags: 0
