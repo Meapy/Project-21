@@ -57,6 +57,11 @@ public class Projectile : MonoBehaviour
                 Debug.Log("Desert Boss Must Take Damage");
                 hitInfo.collider.GetComponent<SphereMovement>().TakeDamage(damage);
             }
+            if (hitInfo.collider.CompareTag("DMini"))
+            {
+                Debug.Log("DMini Must Take Damage");
+                hitInfo.collider.GetComponent<DMiniMovement>().TakeDamage(damage);
+            }
             DestroyProjectile();
         }
 

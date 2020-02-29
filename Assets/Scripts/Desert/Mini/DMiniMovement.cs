@@ -7,7 +7,7 @@ public class DMiniMovement : MonoBehaviour
 {
     public Transform player;
 
-    public Slider DminiHealthBar;
+    public Slider DMiniHealthBar;
     public float health;
 
     public float jumpSpeed;
@@ -25,7 +25,7 @@ public class DMiniMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DminiHealthBar.value = health;
+        DMiniHealthBar.value = health;
 
         if (player != null)
         {
