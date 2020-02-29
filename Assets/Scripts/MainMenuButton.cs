@@ -29,7 +29,6 @@ public class MainMenuButton : MonoBehaviour
     {
         SceneManager.LoadScene("KLevel2");
     }
-
     public void GoToCharacterSelect()
     {
         SceneManager.LoadScene("CharacterSelect");
@@ -52,8 +51,23 @@ public class MainMenuButton : MonoBehaviour
         SceneManager.LoadScene("LevelComplete");
     }
 
+    public void Restart()
+    {
+        if (Score.level == 1)
+        {
+            SceneManager.LoadScene("Level 1");
+        }if (Score.level == 2)
+        {
+            SceneManager.LoadScene("Level 2");
+        }if (Score.level == 3)
+        {
+            SceneManager.LoadScene("Level 3");
+        }
+    }
+
     public void QuitGame()
     {
         Application.Quit();
     }
+
 }
