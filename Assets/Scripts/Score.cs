@@ -20,10 +20,12 @@ public class Score : MonoBehaviour
     public long level1score = 0;
     public long level2score = 0;
     public long level3score = 0;
+    public long level4score = 0;
 
     public static long Level1Highscore = 0;
     public static long Level2Highscore = 0;
     public static long Level3Highscore = 0;
+    public static long Level4Highscore = 0;
 
     public static long BossKill;
 
@@ -51,6 +53,7 @@ public class Score : MonoBehaviour
         Level1Highscore = LoadGame.Level1Highscore;
         Level2Highscore = LoadGame.Level2Highscore;
         Level3Highscore = LoadGame.Level3Highscore;
+        Level4Highscore = LoadGame.Level4Highscore;
         if (sceneName == "Level 1")
         {
             level = 1;
@@ -60,10 +63,14 @@ public class Score : MonoBehaviour
         {
             level = 2;
             HighscoreText.text = "Highscore: " + Level2Highscore.ToString();
+        }else if (sceneName == "Level 3")
+        {
+            level = 3;
+            HighscoreText.text = "Highscore: " + Level3Highscore.ToString();
         }
         else if (sceneName == "Arena")
         {
-            level = 3;
+            level = 4;
             HighscoreText.text = "Highscore: " + Level3Highscore.ToString();
         }
     }
@@ -137,6 +144,9 @@ public class Score : MonoBehaviour
         else if (level == 3)
         {
             level3score = totalScore;
+        }else if (level == 4)
+        {
+            level4score = totalScore;
         }
     }
 }

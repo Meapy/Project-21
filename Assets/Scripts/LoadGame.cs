@@ -11,6 +11,7 @@ public class LoadGame : MonoBehaviour
     public static long Level1Highscore;
     public static long Level2Highscore;
     public static long Level3Highscore;
+    public static long Level4Highscore;
 
 
     public void SaveGame()
@@ -24,6 +25,7 @@ public class LoadGame : MonoBehaviour
         Score.Level1Highscore = data.Level1Highscore;
         Score.Level2Highscore = data.Level2Highscore;
         Score.Level3Highscore = data.Level3Highscore;
+        Score.Level4Highscore = data.Level4Highscore;
 
     }
     void Update()
@@ -31,5 +33,6 @@ public class LoadGame : MonoBehaviour
         Level1Highscore = Score.Level1Highscore;
         Level2Highscore = Score.Level2Highscore;
         Level3Highscore = Score.Level3Highscore;
+        Level4Highscore = Score.Level4Highscore;
     }
 }

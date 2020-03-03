@@ -24,10 +24,10 @@ public class MainMenuButton : MonoBehaviour
     }
     public void GoToLevelThree()
     {
-        SceneManager.LoadScene("Arena");
+        SceneManager.LoadScene("Level 3");
     }public void GoToLevelFour()
     {
-        SceneManager.LoadScene("KLevel2");
+        SceneManager.LoadScene("Arena");
     }
     public void GoToCharacterSelect()
     {

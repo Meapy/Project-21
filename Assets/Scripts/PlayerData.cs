@@ -9,6 +9,7 @@ public class PlayerData
     public long Level1Highscore;
     public long Level2Highscore;
     public long Level3Highscore;
+    internal long Level4Highscore;
 
     public PlayerData(LoadGame player)
     {
