@@ -17,6 +17,7 @@ public class SphereMovement : MonoBehaviour
     private float timeBetweenShots1;
     private float timeBetweenShots2;
     public GameObject SphereProjectile;
+    public GameObject EndLevel;
     public GameObject SphereProjectileLow;
 
 
@@ -65,6 +66,7 @@ public class SphereMovement : MonoBehaviour
             {
                 Score.BossKill = Score.BossKill + 500;
                 Destroy(gameObject);
+                EndLevel.SetActive(true);
 
             }
         }

@@ -11,6 +11,7 @@ public class LevelComplete : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = Score.totalScore;
         scoreText.text = "Score: " + score.ToString();
         if(Score.level == 1)
         {
@@ -27,6 +28,7 @@ public class LevelComplete : MonoBehaviour
             highscoreText.text = "Highscore: " + Score.Level3Highscore.ToString();
 
         }
+
 
     }
 }
