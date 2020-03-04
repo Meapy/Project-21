@@ -10,6 +10,6 @@ public class LoadPreviusScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = score.ToString();
     }
 }
