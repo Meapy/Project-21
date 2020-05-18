@@ -36,7 +36,7 @@ Nikolay Malyshev: Created all of the bosses & player shooting.
 
 Kyle Butler:
 
-Raphael Ofeimu:
+Raphael Ofeimu: Created the maze for level 1 and created the game over scene.
 
 Ire Adebari: Designed/coded the settings menu and pause menu within the game.
 Also produced the soundtrack of the game.
