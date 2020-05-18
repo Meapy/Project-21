@@ -30,9 +30,9 @@ strategic and creative in order to make it out of the maze as fast as possible,
 with as many points as possible.
 
 # Roles accomplshed by every team member
-Daniel Krasovski:
+Daniel Krasovski: Created the scoring system, added the lighting and light drop, added the automatic saving / loading, main menu buttons
 
-Nikolay Malyshev:
+Nikolay Malyshev: Created all of the bosses & player shooting.
 
 Kyle Butler:
 
@@ -48,3 +48,7 @@ to get a common goal achieved. We didn't ever expect our game to be chosen
 for Games Fleadh, and we are incredibly grateful for the opportunity we were given.
 This assignment has shown us how powerful interdependence can be, and the power of synergy
 in a workplace. 
+
+#Game Trailer:
+
+[![YouTube](http://img.youtube.com/vi/zd8B115OHk0/0.jpg)](https://www.youtube.com/watch?v=zd8B115OHk0)
