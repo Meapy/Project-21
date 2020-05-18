@@ -30,13 +30,13 @@ strategic and creative in order to make it out of the maze as fast as possible,
 with as many points as possible.
 
 # Roles accomplshed by every team member
-Daniel Krasovski: Created the scoring system, added the lighting and light drop, added the automatic saving / loading, main menu buttons
+Daniel Krasovski: Created the scoring system, added the lighting and light drop, added the automatic saving / loading, main menu buttons.
 
-Nikolay Malyshev: Created all of the bosses & player shooting.
+Nikolay Malyshev: Created all of the bosses & player shooting & Main Menu UI. Created the spriting for the main menu.
 
-Kyle Butler:
+Kyle Butler: Designed level 2 and 3 for the game. Was in charge of doing the animations for the character. Such as running left,up,down,right and getting hurt.
 
-Raphael Ofeimu: Created the maze for level 1 and created the game over scene.
+Raphael Ofeimu: Designed the maze for level 1 and created the game over scene. Created the minibosses and the projectiles for the enemy for the levels using pixel art.
 
 Ire Adebari: Designed/coded the settings menu and pause menu within the game.
 Also produced the soundtrack of the game.
@@ -47,7 +47,7 @@ As a group, we are incredibly proud of how well we were able to work together
 to get a common goal achieved. We didn't ever expect our game to be chosen
 for Games Fleadh, and we are incredibly grateful for the opportunity we were given.
 This assignment has shown us how powerful interdependence can be, and the power of synergy
-in a workplace. 
+in a workplace.
 
 # Game Trailer:
 
