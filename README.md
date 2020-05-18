@@ -29,7 +29,7 @@ each light fixture dropped comes at a cost of the player's points, so one must b
 strategic and creative in order to make it out of the maze as fast as possible,
 with as many points as possible.
 
-# Roles accomplshed by every team member
+# Roles accomplished by every team member
 Daniel Krasovski: Created the scoring system, added the lighting and light drop, added the automatic saving / loading, main menu buttons. fixed stuff if someone else broke something
 
 Nikolay Malyshev: Created all of the bosses & player shooting & Main Menu UI. Created the spriting for the main menu.
