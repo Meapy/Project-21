@@ -49,6 +49,6 @@ for Games Fleadh, and we are incredibly grateful for the opportunity we were giv
 This assignment has shown us how powerful interdependence can be, and the power of synergy
 in a workplace. 
 
-#Game Trailer:
+# Game Trailer:
 
 [![YouTube](http://img.youtube.com/vi/zd8B115OHk0/0.jpg)](https://www.youtube.com/watch?v=zd8B115OHk0)
