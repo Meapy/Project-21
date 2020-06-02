@@ -22,7 +22,7 @@ public class PlayerControl : MonoBehaviour
 
     public GameObject LightDrop;
     public AudioSource DeadSoundEffect;
-    public bool countdown = false;
+    private bool countdown = false;
 
     void Start()
     {
